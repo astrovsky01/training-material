@@ -102,21 +102,16 @@ In this section we will download the viewer and add it to a local *Galaxy* insta
 >
 > 2. Navigate to the *Charts* repository root:
 >    ```bash
->    $ cd $GALAXY_ROOT/config/plugins/visualizations/charts/static/repository
+>    $ cd $GALAXY_ROOT/config/plugins/visualizations
 >    ```
 >
-> 3. Register your visualization by adding a new item to `registry.json`:
+> 3. Create a new directory:
 >    ```bash
->    "myviz" : [ "pdb" ]
+>    $ mkdir -p myviz/scripts
+>    $ cd myviz/scripts
 >    ```
 >
-> 4. Create a new directory:
->    ```bash
->    $ mkdir -p visualizations/myviz/pdb
->    $ cd visualizations/myviz/pdb
->    ```
->
-> 5. Download the minified plugin code for *PV-Viewer* from [Github](https://github.com/biasmv/pv):
+> 4. Download the minified plugin code for *PV-Viewer* from [Github](https://github.com/biasmv/pv):
 >    ```bash
 >    curl https://raw.githubusercontent.com/biasmv/pv/master/bio-pv.min.js -o plugin.js
 >    ```
@@ -124,11 +119,11 @@ In this section we will download the viewer and add it to a local *Galaxy* insta
 
 Now that the directory structure is in place and the 3rd-party code has been made available, we will continue with building our *Chart* plugin. Each *Charts* visualization contains <b>3</b> files:
 
-- Logo (`logo.png`) which will appear in *Chart*'s plugin selection interface.
-- Configuration (`config.js`) describing input parameters and options.
-- Wrapper (`wrapper.js`) which serves as a bridge between *Galaxy* and our 3rd-party plugin.
+- Logo (`static/logo.png`) which will appear in *Chart*'s plugin selection interface.
+- Configuration (`config/myviz.xml`) describing input parameters and options.
+- Wrapper (`static/script.js`) which serves as a bridge between *Galaxy* and our 3rd-party plugin.
 
-In the following sections we are going to discuss these files in more detail, create and place them into our plugin directory at `myviz/pdb`. Let's start with the logo for our visualization.
+In the following sections we are going to discuss these files in more detail, create and place them into our plugin directory at `myviz`. Let's start with the logo for our visualization.
 
 ### 1.2 Your visualization needs a logo
 
@@ -142,30 +137,35 @@ Here's an example [logo](../../files/charts-plugins/pdb/logo.png):
 >
 > 1. Find an arbitrary image in `PNG`-file format. Possibly using *Google*'s [image search](https://images.google.com).
 >
-> 2. Copy it to the `myviz/pdb` directory and name it `logo.png`.
+> 2. Create and  copy it to the `myviz/static` directory and name it `logo.png`.
 {: .hands_on}
 
 ### 1.3 Configure the visualization
 
-Each visualization has a configuration file named `config.js`. This file has conceptual similarities with a Tool's XML-file. It allows developers to specify a variety of attributes and input parameters for their visualization. Throughout this tutorial we are going to gradually augment this file but for now we keep it simple.
+Each visualization has a configuration file named `config.xml`. This file has conceptual similarities with a Tool's XML-file. It allows developers to specify a variety of attributes and input parameters for their visualization. Throughout this tutorial we are going to gradually augment this file but for now we keep it simple.
 
 > ### {% icon hands_on %} Hands-on
 >
-> 1. Create a file named `config.js` with the following content:
+> 1. Create and copy file named `config/myviz.xml` with the following content:
 >
->    ```js
->    define( [], function() {
->        return {
->            title       : 'A PDB viewer',
->            library     : 'My Visualization',
->            description : 'Displays Protein Structures.',
->            datatypes   : [ 'pdb' ],
->            keywords    : []
->        }
->    });
 >    ```
->
-> 2. Place it into your plugins directory at `myviz/pdb`.
+>   <?xml version="1.0" encoding="UTF-8"?>
+>   <!DOCTYPE visualization SYSTEM "../../visualization.dtd">
+>   <visualization name="A tutorial visualization">
+>       <description>PV is a pdb/protein viewer hosted at https://biasmv.github.io/pv/.</description>
+>        <data_sources>
+>            <data_source>
+>               <model_class>HistoryDatasetAssociation</model_class>
+>              <test type="isinstance" test_attr="datatype" result_type="datatype">molecules.PDB</test>
+>                <to_param param_attr="id">dataset_id</to_param>
+>           </data_source>
+>        </data_sources>
+>        <params>
+>            <param type="dataset" var_name_in_template="hda" required="true">dataset_id</param>
+>        </params>
+>        <entry_point entry_point_type="chart" src="pv.js"/>
+>   </visualization>
+>    ```
 >
 {: .hands_on}
 
@@ -173,7 +173,7 @@ This configures the plugin's name and a description which will appear on the *Ch
 
 ### 1.4 Adding a wrapper
 
-Now we will add a wrapper to connect *Charts* with the *PV-Viewer* plugin. The wrapper consists of a [*Backbone*](http://backbonejs.org) module written in *JavaScript*:
+Now we will add a wrapper to connect *Charts* with the *PV-Viewer* plugin. The wrapper consists of a module written in *JavaScript*:
  The wrapper receives an `options` dictionary with the following <b>four</b> components:
  - *charts*: The model of the current visualization with attributes, settings etc.
  - *process*: A [jQuery.Deferred()](https://api.jquery.com/jquery.deferred/) object to allow asynchronous data requests within the wrapper
@@ -182,18 +182,22 @@ Now we will add a wrapper to connect *Charts* with the *PV-Viewer* plugin. The w
 
 > ### {% icon hands_on %} Hands-on
 >
-> 1. Create a file named `wrapper.js` which returns a *Backbone* model:
+> 1. Create a file named `script.js` in the `myviz/src` directory:
 >  ```js
->    define( [ 'visualizations/myviz/pdb/plugin' ], function( pv ) {
->        return Backbone.Model.extend({
->            initialize: function( options ) {
->                // Add code to configure and execute the plugin here.
->            }
->        });
->    });
+>   import * as pv from "bio-pv";
+>   _.extend(window.bundleEntries || {}, {
+>   load: function(options) {
+>       // This function will be called when the plugin is selected from Galaxy's user interface.
+>       alert("Successfully called visualization.");
+>       options.process.resolve();
+>   }
+> });
 >  ```
-> 2. Place it into your plugins directory at `myviz/pdb`.
 >
+
+yarn add parcel?
+
+
 {: .hands_on}
 
 The above wrapper does not do much yet, except requesting the minified plugin code which we downloaded earlier. In order to execute a 3rd-party plugin we need to figure out how it works. This can be done by finding a working example or documentation. Fortunately the *PV-Viewer* comes with both. Let's take a look at the [documentation](https://pv.readthedocs.io/).
@@ -212,26 +216,39 @@ Now that we have learned the basics on how the viewer plugin works, we can initi
 
 > ### {% icon hands_on %} Hands-on
 >
-> 1. Modify `wrapper.js` by adding the following code into the `initialize` call:
+> 1. Modify `src/pv.js` by adding the following code into the `load` call:
 >
 >    ```js
->    var viewer = pv.Viewer( document.getElementById( options.targets[ 0 ] ), {
->        width       : 'auto',
->        height      : 'auto',
->        antialias   : true,
->        outline     : true
->    });
->    $.ajax( {
->        url     : options.dataset.download_url,
->        success : function( response ) {
->            var structure = pv.io.pdb( response );
->            viewer.clear();
->            viewer.renderAs( 'protein', structure, 'cartoon', {} );
->            viewer.centerOn( structure );
->            viewer.autoZoom();
->            options.process.resolve();
->        }
->    });
+>    var settings = options.chart.settings;
+>   var viewer = pv.Viewer(document.getElementById(options.targets[0]), {
+>       quality: settings.get('quality'),
+>       width: 'auto',
+>       height: 'auto',
+>       antialias: true,
+>       outline: true
+>   });
+>   $.ajax( {
+>       url: options.dataset.download_url,
+>       cache: true,
+>       success: function(response) {
+>                var structure = pv.io.pdb(response);
+>                var viewer_options = {};
+>                _.each(settings.attributes, function(value, key) {
+>                    viewer_options[key.replace('viewer|', '')] = value;
+>                });
+>                viewer.clear();
+>                viewer.renderAs('protein', structure, viewer_options.mode, viewer_options);
+>                viewer.centerOn(structure);
+>                viewer.autoZoom();
+>                options.chart.state('ok', 'Chart drawn.');
+>                options.process.resolve();
+>            },
+>            error: function() {
+>                options.chart.state('ok', 'Failed to load pdb file.');
+>                options.process.resolve();
+>            }
+>        });
+>        $(window).resize(function() { viewer.fitParent() });
 >    ```
 {: .hands_on}
 
@@ -243,7 +260,7 @@ Now that we have completed the *Charts* plugin definition, it is time to bundle 
 >
 > 1. Navigate to *Chart*'s root directory:
 >    ```bash
->    $ cd $GALAXY_ROOT/config/plugins/visualizations/charts
+>    $ cd $GALAXY_ROOT/config/plugins/visualizations/myviz
 >    ```
 >
 > 2. Install the necessary `node-modules`, unless already available:
@@ -305,23 +322,78 @@ More information on parameters can be found in the [wiki](https://docs.galaxypro
 >
 > 1. Add the following block into the `config.js` file:
 >    ```js
->    settings : {
->        mode : {
->            label   : 'Render as:',
->            help    : 'Select the rendering mode.',
->            type    : 'select',
->            display : 'radio',
->            value   : 'cartoon',
->            data    : [ { label : 'Cartoon',        value : 'cartoon' },
->                        { label : 'Lines',          value : 'lines' },
->                        { label : 'Points',         value : 'points' },
->                        { label : 'Spheres',        value : 'spheres' },
->                        { label : 'Trace',          value : 'trace' },
->                        { label : 'Trace (line)',   value : 'lineTrace' },
->                        { label : 'Trace (smooth)', value : 'sline' },
->                        { label : 'Tube',           value : 'tube' } ]
->        }
->    }
+>    <settings>
+>       <input>
+>           <name>viewer</name>
+>           <type>conditional</type>
+>           <test_param>
+>               <name>mode</name>
+>               <label>Display mode</label>
+>               <type>select</type>
+>               <display>radio</display>
+>               <value>cartoon</value>
+>               <help>Select the rendering mode.</help>
+>               <data>
+>                   <data>
+>                       <value>cartoon</value>
+>                       <label>Cartoon</label>
+>                   </data>
+>                   <data>
+>                       <value>lines</value>
+>                       <label>Lines</label>
+>                   </data>
+>                   <data>
+>                       <value>points</value>
+>                       <label>Points</label>
+>                   </data>
+>               </data>
+>           </test_param>
+>           <cases>
+>               <cases>
+>                   <value>cartoon</value>
+>                   <inputs>
+>                       <inputs>
+>                           <name>radius</name>
+>                           <label>Radius</label>
+>                           <help>Radius of tube profile. Also influences the profile thickness for helix and strand profiles.</help>
+>                           <type>float</type>
+>                           <value>0.3</value>
+>                           <min>0.1</min>
+>                           <max>3</max>
+>                      </inputs>
+>                   </inputs>
+>               </cases>
+>               <cases>
+>                   <value>lines</value>
+>                   <inputs>
+>                       <inputs>
+>                           <name>lineWidth</name>
+>                           <label>Line width</label>
+>                           <help>Specify the line width.</help>
+>                           <type>float</type>
+>                           <value>0.1</value>
+>                           <min>10</min>
+>                           <max>4</max>
+>                       </inputs>
+>                   </inputs>
+>               </cases>
+>               <cases>
+>                   <value>points</value>
+>                   <inputs>
+>                       <inputs>
+>                           <name>pointSize</name>
+>                           <label>Point size</label>
+>                           <help>Specify the point size.</help>
+>                           <type>float</type>
+>                           <value>0.1</value>
+>                           <min>10</min>
+>                           <max>1</max>
+>                       </inputs>
+>                   </inputs>
+>               </cases>
+>           </cases>
+>       </input>
+>    </settings>
 >    ```
 >
 > 2. Change the following line in `wrapper.js`:
