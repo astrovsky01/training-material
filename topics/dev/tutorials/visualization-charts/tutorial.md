@@ -1,14 +1,14 @@
 ---
 layout: tutorial_hands_on
 
-title: "Visualizations: charts plugins"
+title: "Visualizations: Javascript plugins"
 questions:
-  - "How can I make a custom plugin for Charts?"
+  - "How can I make a custom plugin for Galaxy?"
 objectives:
-  - "Learn how to add custom javascript plugins to the Galaxy Charts framework"
+  - "Learn how to add custom javascript plugins to the visualization framework"
 time_estimation: "1h"
 key_points:
-  - "Charts is a pluggable extension system for JS-only visualisations"
+  - "Demonstrating a pluggable extension system for JS-only visualisations"
   - "With only 3 files we can integrate any JS-only visualizations into Galaxy"
 contributors:
   - shiltemann
@@ -20,7 +20,7 @@ contributors:
 ## Introduction
 {:.no_toc}
 
-In this tutorial we are going to demonstrate how to add a 3rd-party visualization to *Charts* and what the benefits are. The plugin we select for this purpose is the [*PV-Javascript Protein Viewer*](https://biasmv.github.io/pv/). It is an open source, protein structure viewer for `PDB`-files. There are many other popular protein structure viewers available for the visualization of `PDB`-files such as e.g. [NGL](https://arose.github.io/ngl/) (also available in *Charts*) and [JSMol](https://chemapps.stolaf.edu/jmol/jsmol/jsmol.htm).
+In this tutorial we are going to demonstrate how to add a 3rd-party visualization to Galaxy and what the benefits are. The plugin we select for this purpose is the [*PV-Javascript Protein Viewer*](https://biasmv.github.io/pv/). It is an open source, protein structure viewer for `PDB`-files. There are many other popular protein structure viewers available for the visualization of `PDB`-files such as e.g. [NGL](https://arose.github.io/ngl/) (also available in Galaxy) and [JSMol](https://chemapps.stolaf.edu/jmol/jsmol/jsmol.htm).
 
 > ### {% icon details %} Background: What is the PDB (Protein Data Bank) file format?
 >
@@ -100,30 +100,29 @@ In this section we will download the viewer and add it to a local *Galaxy* insta
 >    $ git clone https://github.com/galaxyproject/galaxy
 >    ```
 >
-> 2. Navigate to the *Charts* repository root:
+> 2. Navigate to the visualization framework's root:
 >    ```bash
 >    $ cd $GALAXY_ROOT/config/plugins/visualizations
 >    ```
 >
-> 3. Create a new directory:
+> 3. Copy the existing example into a new directory:
 >    ```bash
 >    $ cp -r example myviz
->    $ cd myviz/src
 >    ```
 >
 {: .hands_on}
 
-Now that the directory structure is in place and the 3rd-party code has been made available, we will continue with building our *Chart* plugin. Each *Charts* visualization contains <b>3</b> files:
+Now that the directory structure is in place, let us review the example visualization. Each visualization contains a set of <b>3</b> files:
 
 - Logo (`static/logo.png`) which will appear in *Chart*'s plugin selection interface.
 - Configuration (`config/example.xml`) describing input parameters and options.
 - Wrapper (`src/script.js`) which serves as a bridge between *Galaxy* and our 3rd-party plugin.
 
-In the following sections we are going to discuss these files in more detail, create and place them into our plugin directory at `myviz`. Let's start with the logo for our visualization.
+In the following sections we are going to discuss these files in more detail and modify them to incorporate a new visualization. Let's start with the logo for our visualization.
 
 ### 1.2 Your visualization needs a logo
 
-Each visualization is represented by a logo in the *Charts* interface. This makes it easier for users to find and configure their visualization. The logo should be in the `png`-file format. It will appear with a width of 120 pixels.
+Each visualization is represented by a logo in the Galaxy interface. This makes it easier for users to find and configure their visualization. The logo should be in the `png`-file format. It will appear with a width of 120 pixels.
 
 Here's an example [logo](../../files/charts-plugins/pdb/logo.png):
 
@@ -133,7 +132,7 @@ Here's an example [logo](../../files/charts-plugins/pdb/logo.png):
 >
 > 1. Find an arbitrary image in `PNG`-file format. Possibly using *Google*'s [image search](https://images.google.com).
 >
-> 2. Create and  copy it to the `myviz/static` directory and name it `logo.png`.
+> 2. Copy it to the `myviz/static` directory and name it `logo.png`.
 {: .hands_on}
 
 ### 1.3 Configure the visualization
@@ -142,11 +141,9 @@ Each visualization has a configuration file. In this case it is named `example.x
 
 > ### {% icon hands_on %} Hands-on
 >
-> 1. Edit the file named `config/example.xml` and change the name and description.
+> 1. Rename the file to `config/myviz.xml`
 >
-> 2. Remove the `<specs>` and `<groups>` sections.
->
-> 2. Rename the file to `config/myviz.xml`
+> 2. Edit the file named `config/example.xml` and change the name and description.
 >
 > 3. Go to the your Galaxy root directory and repack the scripts
 >    ```bash
@@ -167,11 +164,13 @@ You should now see your visualization in the `Create Visualization`.
 
 > ### {% icon hands_on %} Hands-on
 >
-> 1. Edit the file named `config/example.xml` and change identify the `<data_source>` section.
+> 1. Open the file named `config/myviz.xml` and find the `<data_source>` section.
 >
 > 2. Replace the existing two `<test>` section with:
 >
 > `<test type="isinstance" test_attr="datatype" result_type="datatype">molecules.PDB</test>`
+>
+> 3. Remove the `<specs>` and `<groups>` sections.
 >
 {: .hands_on}
 
@@ -179,14 +178,14 @@ This links the plugin's to the `PDB`-file format, which means that for any histo
 
 ### 1.4 Modifying the wrapper
 
-Now we will add a wrapper to connect *Charts* with the *PV-Viewer* plugin. The wrapper consists of a module written in *JavaScript*:
+Now we let us take a look at the wrapper which connects our visualization with Galaxy. The wrapper consists of a module written in *JavaScript* and is available at `src/script.js`:
  The wrapper receives an `options` dictionary with the following <b>four</b> components:
  - *charts*: The model of the current visualization with attributes, settings etc.
  - *process*: A [jQuery.Deferred()](https://api.jquery.com/jquery.deferred/) object to allow asynchronous data requests within the wrapper
  - *dataset*: Details on the selected datasets such as url, ids etc. which can be used to access the dataset
  - *targets*: The DOM ids of the container elements to draw into
 
-In order to execute a 3rd-party plugin we need to figure out how it works. This can be done by finding a working example or documentation. Fortunately the *PV-Viewer* comes with both. Let's take a look at the [documentation](https://pv.readthedocs.io/).
+In this tutorial we will implement the *PV-Viewer* plugin. In order to execute a 3rd-party plugin we need to figure out how it works. This can be done by finding a working example or documentation. Fortunately the *PV-Viewer* comes with both. Let's take a look at the [documentation](https://pv.readthedocs.io/).
 
 > ### {% icon hands_on %} Hands-on
 >
@@ -198,7 +197,7 @@ In order to execute a 3rd-party plugin we need to figure out how it works. This 
 >
 {: .hands_on}
 
-Now that we have learned the basics on how the viewer plugin works, we can download it and adjust  `script.js`.
+Now that we have learned the basics on how the viewer plugin works, we can edit it and adjust  `script.js`.
 
 > ### {% icon hands_on %} Hands-on
 >
@@ -303,7 +302,7 @@ In this section we will select a `PDB`-file from the Protein Databank and visual
 
 ## Section 2 - Allow different rendering modes
 
-In this section we are going to augment the visualization such that users may select different rendering modes. This is one of the major advantages of using the *Charts* framework. Similar to a Tool's XML file, developers may specify input parameters which then will be presented to the user. The definition of Tool and Visualization input parameters are similar, however the latter is provided in *JavaScript* and not as XML.
+In this section we are going to augment the visualization such that users may select different rendering modes. Similar to a Tool's XML file, developers may specify input parameters which then will be presented to the user. The definition of Tool and Visualization input parameters are similar, however the latter is provided in *JavaScript* and not as XML.
 More information on parameters can be found in the [wiki](https://docs.galaxyproject.org/en/latest/dev/schema.html).
 
 > ### {% icon hands_on %} Hands-on
@@ -357,11 +356,11 @@ More information on parameters can be found in the [wiki](https://docs.galaxypro
 >
 > 4. Refresh your browser.
 >
-> 5. Load *Charts* and test different rendering modes in the *Customization* tab of your visualization.
+> 5. Load your visualization and test different rendering modes in the *Customization* tab of your visualization.
 >
 {: .hands_on}
 
 ## Conclusion
 {:.no_toc}
 
-First of all, thank you for completing this tutorial. We have learned how to add visualizations to the *Charts* framework and how to build a custom visualization form.
+First of all, thank you for completing this tutorial. We have learned how to add visualizations to the Galaxy framework and how to build a custom visualization form.
