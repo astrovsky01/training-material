@@ -107,21 +107,17 @@ In this section we will download the viewer and add it to a local *Galaxy* insta
 >
 > 3. Create a new directory:
 >    ```bash
->    $ mkdir -p myviz/scripts
->    $ cd myviz/scripts
+>    $ cp -r example myviz
+>    $ cd myviz/src
 >    ```
 >
-> 4. Download the minified plugin code for *PV-Viewer* from [Github](https://github.com/biasmv/pv):
->    ```bash
->    curl https://raw.githubusercontent.com/biasmv/pv/master/bio-pv.min.js -o plugin.js
->    ```
 {: .hands_on}
 
 Now that the directory structure is in place and the 3rd-party code has been made available, we will continue with building our *Chart* plugin. Each *Charts* visualization contains <b>3</b> files:
 
 - Logo (`static/logo.png`) which will appear in *Chart*'s plugin selection interface.
-- Configuration (`config/myviz.xml`) describing input parameters and options.
-- Wrapper (`static/script.js`) which serves as a bridge between *Galaxy* and our 3rd-party plugin.
+- Configuration (`config/example.xml`) describing input parameters and options.
+- Wrapper (`src/script.js`) which serves as a bridge between *Galaxy* and our 3rd-party plugin.
 
 In the following sections we are going to discuss these files in more detail, create and place them into our plugin directory at `myviz`. Let's start with the logo for our visualization.
 
@@ -142,36 +138,46 @@ Here's an example [logo](../../files/charts-plugins/pdb/logo.png):
 
 ### 1.3 Configure the visualization
 
-Each visualization has a configuration file named `config.xml`. This file has conceptual similarities with a Tool's XML-file. It allows developers to specify a variety of attributes and input parameters for their visualization. Throughout this tutorial we are going to gradually augment this file but for now we keep it simple.
+Each visualization has a configuration file. In this case it is named `example.xml`. This file has conceptual similarities with a Tool's XML-file. It allows developers to specify a variety of attributes and input parameters for their visualization. Throughout this tutorial we are going to gradually augment this file but for now we keep it simple.
 
 > ### {% icon hands_on %} Hands-on
 >
-> 1. Create and copy file named `config/myviz.xml` with the following content:
+> 1. Edit the file named `config/example.xml` and change the name and description.
 >
+> 2. Remove the `<specs>` and `<groups>` sections.
+>
+> 2. Rename the file to `config/myviz.xml`
+>
+> 3. Go to the your Galaxy root directory and repack the scripts
+>    ```bash
+>    $ cd $GALAXY_ROOT
+>    $ make client
 >    ```
->   <?xml version="1.0" encoding="UTF-8"?>
->   <!DOCTYPE visualization SYSTEM "../../visualization.dtd">
->   <visualization name="A tutorial visualization">
->       <description>PV is a pdb/protein viewer hosted at https://biasmv.github.io/pv/.</description>
->        <data_sources>
->            <data_source>
->               <model_class>HistoryDatasetAssociation</model_class>
->              <test type="isinstance" test_attr="datatype" result_type="datatype">molecules.PDB</test>
->                <to_param param_attr="id">dataset_id</to_param>
->           </data_source>
->        </data_sources>
->        <params>
->            <param type="dataset" var_name_in_template="hda" required="true">dataset_id</param>
->        </params>
->        <entry_point entry_point_type="chart" src="pv.js"/>
->   </visualization>
+>
+> 4. Run Galaxy
+>    ```bash
+>    $ ./run.sh
 >    ```
 >
 {: .hands_on}
 
-This configures the plugin's name and a description which will appear on the *Charts* selection interface. It also links the plugin to the `PDB`-file format, which means that for any history item of these file type the plugin will automatically become available. Keywords are optional and can help to improve the annotation.
+You should now see your visualization in the `Create Visualization`.
 
-### 1.4 Adding a wrapper
+### 1.4 Assign a new datatype to your visualization
+
+> ### {% icon hands_on %} Hands-on
+>
+> 1. Edit the file named `config/example.xml` and change identify the `<data_source>` section.
+>
+> 2. Replace the existing two `<test>` section with:
+>
+> `<test type="isinstance" test_attr="datatype" result_type="datatype">molecules.PDB</test>`
+>
+{: .hands_on}
+
+This links the plugin's to the `PDB`-file format, which means that for any history item of these file type the plugin will automatically become available.
+
+### 1.4 Modifying the wrapper
 
 Now we will add a wrapper to connect *Charts* with the *PV-Viewer* plugin. The wrapper consists of a module written in *JavaScript*:
  The wrapper receives an `options` dictionary with the following <b>four</b> components:
@@ -180,27 +186,7 @@ Now we will add a wrapper to connect *Charts* with the *PV-Viewer* plugin. The w
  - *dataset*: Details on the selected datasets such as url, ids etc. which can be used to access the dataset
  - *targets*: The DOM ids of the container elements to draw into
 
-> ### {% icon hands_on %} Hands-on
->
-> 1. Create a file named `script.js` in the `myviz/src` directory:
->  ```js
->   import * as pv from "bio-pv";
->   _.extend(window.bundleEntries || {}, {
->   load: function(options) {
->       // This function will be called when the plugin is selected from Galaxy's user interface.
->       alert("Successfully called visualization.");
->       options.process.resolve();
->   }
-> });
->  ```
->
-
-yarn add parcel?
-
-
-{: .hands_on}
-
-The above wrapper does not do much yet, except requesting the minified plugin code which we downloaded earlier. In order to execute a 3rd-party plugin we need to figure out how it works. This can be done by finding a working example or documentation. Fortunately the *PV-Viewer* comes with both. Let's take a look at the [documentation](https://pv.readthedocs.io/).
+In order to execute a 3rd-party plugin we need to figure out how it works. This can be done by finding a working example or documentation. Fortunately the *PV-Viewer* comes with both. Let's take a look at the [documentation](https://pv.readthedocs.io/).
 
 > ### {% icon hands_on %} Hands-on
 >
@@ -212,68 +198,70 @@ The above wrapper does not do much yet, except requesting the minified plugin co
 >
 {: .hands_on}
 
-Now that we have learned the basics on how the viewer plugin works, we can initialize and load it in `wrapper.js`.
+Now that we have learned the basics on how the viewer plugin works, we can download it and adjust  `script.js`.
 
 > ### {% icon hands_on %} Hands-on
 >
-> 1. Modify `src/pv.js` by adding the following code into the `load` call:
+> 1. Access your visualizations `myviz/src` directory.
+>    ```bash
+>    $ cd $GALAXY_ROOT/config/visualizations/myviz
+>    ```
+>
+> 2. Install the package for the *PV-Viewer*:
+>    ```bash
+>    yarn add bio-pv
+>    ```
+>
+> 3. Modify `src/script.js` by adding the following code into the `load` call:
 >
 >    ```js
->    var settings = options.chart.settings;
->   var viewer = pv.Viewer(document.getElementById(options.targets[0]), {
->       quality: settings.get('quality'),
->       width: 'auto',
->       height: 'auto',
->       antialias: true,
->       outline: true
->   });
->   $.ajax( {
->       url: options.dataset.download_url,
->       cache: true,
->       success: function(response) {
->                var structure = pv.io.pdb(response);
->                var viewer_options = {};
->                _.each(settings.attributes, function(value, key) {
->                    viewer_options[key.replace('viewer|', '')] = value;
->                });
->                viewer.clear();
->                viewer.renderAs('protein', structure, viewer_options.mode, viewer_options);
->                viewer.centerOn(structure);
->                viewer.autoZoom();
->                options.chart.state('ok', 'Chart drawn.');
->                options.process.resolve();
->            },
->            error: function() {
->                options.chart.state('ok', 'Failed to load pdb file.');
->                options.process.resolve();
->            }
->        });
->        $(window).resize(function() { viewer.fitParent() });
+>    var viewer = pv.Viewer( document.getElementById( options.targets[ 0 ] ), {
+>        width       : 'auto',
+>        height      : 'auto',
+>        antialias   : true,
+>        outline     : true
+>    });
+>    $.ajax( {
+>        url     : options.dataset.download_url,
+>        success : function( response ) {
+>            var structure = pv.io.pdb( response );
+>            viewer.clear();
+>            viewer.renderAs( 'protein', structure, 'cartoon', {} );
+>            viewer.centerOn( structure );
+>            viewer.autoZoom();
+>            options.chart.state('ok', 'Chart drawn.');
+>            options.process.resolve();
+>        }
+>    });
 >    ```
 {: .hands_on}
 
 ### 1.5 Build the package
 
-Now that we have completed the *Charts* plugin definition, it is time to bundle the scripts and libraries into a single module file using [*webpack*](https://webpack.github.io). Once packed the plugin will be accessible through *Galaxy*'s user interface. Packing modules does not require restarting your *Galaxy* instance, just make sure to properly refresh your browser.
+Now that we have completed the plugin definition, it is time to bundle the scripts and libraries into a single module file using [*parcel*](https://parceljs.org). Once packed the plugin will be accessible through *Galaxy*'s user interface. Packing modules does not require restarting your *Galaxy* instance, just make sure to properly refresh your browser.
 
 > ### {% icon hands_on %} Hands-on
 >
-> 1. Navigate to *Chart*'s root directory:
+> 1. Navigate to your visualizations root directory:
 >    ```bash
 >    $ cd $GALAXY_ROOT/config/plugins/visualizations/myviz
 >    ```
 >
 > 2. Install the necessary `node-modules`, unless already available:
 >    ```bash
->    $ npm install
+>    $ yarn install
 >    ```
 >
-> 3. Run `webpack` to build the plugin:
+> 3. Run `parcel` to build the plugin:
 >    ```bash
->    $ webpack
+>    $ parcel build src/script.js -d static/
+>    ```
 >
->    # If webpack is not available on your PATH, use the following command:
->    $ node_modules/webpack/bin/webpack.js
+> 4. Repack the scripts and run Galaxy:
+>    ```bash
+>    $ cd $GALAXY_ROOT
+>    $ make client
+>    $ ./run.sh
 >    ```
 >
 {: .hands_on}
@@ -320,78 +308,30 @@ More information on parameters can be found in the [wiki](https://docs.galaxypro
 
 > ### {% icon hands_on %} Hands-on
 >
-> 1. Add the following block into the `config.js` file:
+> 1. Add the following block into the `myviz.xml` file:
 >    ```js
 >    <settings>
 >       <input>
->           <name>viewer</name>
->           <type>conditional</type>
->           <test_param>
->               <name>mode</name>
->               <label>Display mode</label>
->               <type>select</type>
->               <display>radio</display>
->               <value>cartoon</value>
->               <help>Select the rendering mode.</help>
+>           <name>mode</name>
+>           <label>Display mode</label>
+>           <type>select</type>
+>           <display>radio</display>
+>           <value>cartoon</value>
+>           <help>Select the rendering mode.</help>
+>           <data>
 >               <data>
->                   <data>
->                       <value>cartoon</value>
->                       <label>Cartoon</label>
->                   </data>
->                   <data>
->                       <value>lines</value>
->                       <label>Lines</label>
->                   </data>
->                   <data>
->                       <value>points</value>
->                       <label>Points</label>
->                   </data>
->               </data>
->           </test_param>
->           <cases>
->               <cases>
 >                   <value>cartoon</value>
->                   <inputs>
->                       <inputs>
->                           <name>radius</name>
->                           <label>Radius</label>
->                           <help>Radius of tube profile. Also influences the profile thickness for helix and strand profiles.</help>
->                           <type>float</type>
->                           <value>0.3</value>
->                           <min>0.1</min>
->                           <max>3</max>
->                      </inputs>
->                   </inputs>
->               </cases>
->               <cases>
+>                   <label>Cartoon</label>
+>               </data>
+>               <data>
 >                   <value>lines</value>
->                   <inputs>
->                       <inputs>
->                           <name>lineWidth</name>
->                           <label>Line width</label>
->                           <help>Specify the line width.</help>
->                           <type>float</type>
->                           <value>0.1</value>
->                           <min>10</min>
->                           <max>4</max>
->                       </inputs>
->                   </inputs>
->               </cases>
->               <cases>
->                   <value>points</value>
->                   <inputs>
->                       <inputs>
->                           <name>pointSize</name>
->                           <label>Point size</label>
->                           <help>Specify the point size.</help>
->                           <type>float</type>
->                           <value>0.1</value>
->                           <min>10</min>
->                           <max>1</max>
->                       </inputs>
->                   </inputs>
->               </cases>
->           </cases>
+>                   <label>Lines</label>
+>               </data>
+>               <data>
+>                    <value>points</value>
+>                    <label>Points</label>
+>               </data>
+>           </data>
 >       </input>
 >    </settings>
 >    ```
@@ -404,66 +344,20 @@ More information on parameters can be found in the [wiki](https://docs.galaxypro
 >
 >    ```js
 >    var settings = options.chart.settings;
->    viewer.renderAs( 'protein', structure, settings.get( 'mode' ), settings.attributes );
+>    viewer.renderAs( 'protein', structure, settings.get( 'mode' ), {} );
 >    ```
 >
 > 3. Rebuild the plugin
 >
 >    ```bash
->    $ rm static/repository/build/myviz_pdb.js
->    $ webpack
+>    $ parcel build src/script.js -d static/
+>    $ cd $GALAXY_ROOT
+>    $ make client
 >    ```
 >
 > 4. Refresh your browser.
 >
 > 5. Load *Charts* and test different rendering modes in the *Customization* tab of your visualization.
->
-{: .hands_on}
-
-## Section 3 - Adding more options
-
-From the *PV-Viewer* documentation we can see that there are more settings available such as e.g. 'pointSize', 'lineWidth' and 'radius'. In this section we are going to further enhance the visualizations user interface to incorporate these input parameters
-
-> ### {% icon hands_on %} Hands-on
->
-> 1. Add the following block into the `settings` of your `config.js` file:
->    ```js
->    pointSize: {
->        label : 'Point size',
->        help  : 'Specify the point size.',
->        type  : 'float',
->        min   : 0.1,
->        max   : 10,
->        value : 1
->    },
->    lineWidth : {
->        label : 'Line width',
->        help  : 'Specify the line width.',
->        type  : 'float',
->        min   : 0.1,
->        max   : 10,
->        value : 4
->    },
->    radius : {
->        label : 'Radius',
->        help  : 'Radius of tube profile. Also influences the profile thickness for helix and strand profiles.',
->        type  : 'float',
->        min   : 0.1,
->        max   : 3,
->        value : 0.3
->    }
->    ```
->
-> 2. Rebuild the plugin
->
->    ```bash
->    $ rm static/repository/build/myviz_pdb.js
->    $ webpack
->    ```
->
-> 3. Refresh your browser.
->
-> 4. Load *Charts* and test new options in the *Customization* tab of your visualization.
 >
 {: .hands_on}
 
