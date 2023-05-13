@@ -34,7 +34,8 @@
         <meta property="og:site_name" content="Galaxy Training Network" />
         <meta property="og:title" content="Galaxy Training: Introduction to proteomics, protein identification, quant..." />
         <meta property="og:description" content="Training material for proteomics workflows in Galaxy" />
-        <meta property="og:image" content="/training-material/assets/images/GTNLogo1000.png" />
+        
+        <meta property="og:image" content="/training-material/assets/images/GTNLogo1000.png">
 
         <script type="application/ld+json">
             
@@ -53,8 +54,8 @@
   },
   "citation": {
     "@type": "CreativeWork",
-    "name": "Community-Driven Data Analysis Training for Biology",
-    "url": "https://doi.org/10.1016/j.cels.2018.05.012"
+    "name": "Galaxy Training: A Powerful Framework for Teaching!",
+    "url": "https://doi.org/10.1371/journal.pcbi.1010752"
   },
   "copyrightHolder": {
     "@type": "Organization",
@@ -62,13 +63,13 @@
     "name": "Galaxy Training Network",
     "url": "https://galaxyproject.org/teach/gtn/"
   },
-  "dateModified": "2023-01-12 09:58:34 +0000",
+  "dateModified": "2023-01-12T09:58:34+00:00",
   "discussionUrl": "https://gitter.im/Galaxy-Training-Network/Lobby",
   "headline": "Introduction to proteomics, protein identification, quantification and statistical modelling",
   "interactivityType": "mixed",
   "isAccessibleForFree": true,
   "isFamilyFriendly": true,
-  "license": "https://spdx.org/licenses/CC-BY-4.0.html",
+  "license": "https://spdx.org/licenses/CC-BY-4.0",
   "producer": {
     "@type": "Organization",
     "email": "galaxytrainingnetwork@gmail.com",
@@ -88,6 +89,10 @@
     "url": "https://galaxyproject.org/teach/gtn/"
   },
   "identifier": "https://github.com/galaxyproject/training-material",
+  "workTranslation": [
+
+  ],
+  "creativeWorkStatus": "Active",
   "accessMode": [
     "textual",
     "visual"
@@ -141,33 +146,8 @@
       "@context": "https://schema.org",
       "@type": "Person",
       "http://purl.org/dc/terms/conformsTo": {
-        "@id": "https://bioschemas.org/profiles/Person/0.2-DRAFT-2019_07_19",
-        "@type": "Person"
-      },
-      "url": "https://training.galaxyproject.org/training-material/hall-of-fame/foellmelanie/",
-      "mainEntityOfPage": "https://training.galaxyproject.org/training-material/hall-of-fame/foellmelanie/",
-      "name": "Melanie Föll",
-      "image": "https://avatars.githubusercontent.com/foellmelanie",
-      "description": "A contributor to the GTN project.",
-      "memberOf": [
-        {
-          "@type": "Organization",
-          "email": "galaxytrainingnetwork@gmail.com",
-          "name": "Galaxy Training Network",
-          "url": "https://galaxyproject.org/teach/gtn/"
-        }
-      ],
-      "identifier": "https://orcid.org/0000-0002-1887-7543",
-      "orcid": "https://orcid.org/0000-0002-1887-7543"
-    }
-  ],
-  "contributor": [
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "http://purl.org/dc/terms/conformsTo": {
-        "@id": "https://bioschemas.org/profiles/Person/0.2-DRAFT-2019_07_19",
-        "@type": "Person"
+        "@id": "https://bioschemas.org/profiles/Person/0.3-DRAFT",
+        "@type": "CreativeWork"
       },
       "url": "https://training.galaxyproject.org/training-material/hall-of-fame/foellmelanie/",
       "mainEntityOfPage": "https://training.galaxyproject.org/training-material/hall-of-fame/foellmelanie/",
@@ -200,7 +180,12 @@
       "termCode": "topic_0121",
       "url": "https://bioportal.bioontology.org/ontologies/EDAM/?p=classes&conceptid=http%3A%2F%2Fedamontology.org%2Ftopic_0121"
     }
-  ]
+  ],
+  "educationalLevel": "Introductory",
+  "mentions": [
+
+  ],
+  "abstract": "# Proteomics"
 }
         </script>
     </head>
@@ -462,7 +447,7 @@ This was the overview of a typical explorative tandem mass spectrometry workflow
 
 ???
 
-Many tryptic peptides of an organism have same or similar masses. Therefore, MS1 spectra don’t allow reliable peptide sequence identifications. MS2 spectra allow peptide identification via the generated peptide fragments. The N-terminal fragments are called b-ions and the C-terminal fragments y-ions. The differences between the fragment masses correspond to the mass of an amino acid. This allows manual interpretation of the spectra. However, this is a tricky procedure because in reality the MS2 spectra contain more noise and side product peaks than shown here. Also, in explorative proteomics tens of thousands of spectra are acquired and make manual interpretation unfeasible. The manual interpretation process is automatized with so called 'de novo sequencing' software. These algorithms have improved in the last years. No information about potential protein sequences in the sample are needed. The default software for peptide identification are so called ‘search engines’. They require information about all protein sequences of the analyzed organism as FASTA database. From this they generate in silico spectra which are then matched to the measured mass spectra.
+Many tryptic peptides of an organism have same or similar masses. Therefore, MS1 spectra don’t allow reliable peptide sequence identifications. MS2 spectra allow peptide identification via the generated peptide fragments. The N-terminal fragments are called b-ions and the C-terminal fragments y-ions. The differences between the fragment masses correspond to the mass of an amino acid. This allows manual interpretation of the spectra. However, this is a tricky procedure because in reality the MS2 spectra contain more noise and side product peaks than shown here. Also, in explorative proteomics tens of thousands of spectra are acquired and make manual interpretation unfeasible. The manual interpretation process is automatized with so called &apos;de novo sequencing&apos; software. These algorithms have improved in the last years. No information about potential protein sequences in the sample are needed. The default software for peptide identification are so called ‘search engines’. They require information about all protein sequences of the analyzed organism as FASTA database. From this they generate in silico spectra which are then matched to the measured mass spectra.
 
 ---
 
@@ -584,7 +569,7 @@ For label-free quantification all peak areas in the MS1 spectra are integrated.
 - How to summarize peptide abundances into protein abundances?
 
 
-![table with peptides 1-4. Some are unique, some are 'razor'. Some have modificatinos. Their intensities are listed. This table has an arrow below for 'summarization by mean, sum, ...' and quantificatino value for Protein A.](/training-material/topics/proteomics/images/intro-slides/protein-quantification-table.png)
+![table with peptides 1-4. Some are unique, some are &apos;razor&apos;. Some have modificatinos. Their intensities are listed. This table has an arrow below for &apos;summarization by mean, sum, ...&apos; and quantificatino value for Protein A.](/training-material/topics/proteomics/images/intro-slides/protein-quantification-table.png)
 
 
 ???
@@ -703,7 +688,7 @@ MSstats is an open-source software for statistical modelling of quantitative pro
 
 #  Statistical Analysis with MSstats
 
-![msstats takes output of quant. proteomics software and annotation files and converts them to msstats format. Removes/keeps features, peptides, and proteins and summarizes. This is passed to 'data processing' which has intensity transformation/normalisation, filtering of peptides/features, missing value imputation, and run level summarisation. This is passed to statistical modelling along with a comparison matrix and does group comparison.](/training-material/topics/proteomics/images/intro-slides/msstats_overview.png)
+![msstats takes output of quant. proteomics software and annotation files and converts them to msstats format. Removes/keeps features, peptides, and proteins and summarizes. This is passed to &apos;data processing&apos; which has intensity transformation/normalisation, filtering of peptides/features, missing value imputation, and run level summarisation. This is passed to statistical modelling along with a comparison matrix and does group comparison.](/training-material/topics/proteomics/images/intro-slides/msstats_overview.png)
 
 
 ???
@@ -754,7 +739,7 @@ First, the input data is converted into an MSstats compatible table. For this st
 
 ???
 
-Log transformation brings the peptide intensities into a close to normal distribution. Normalization aims to make the intensities of different runs more comparable to each other. The default normalization method is called 'equalize medians'. It assumes that the majority of proteins do not change across runs. It shifts all intensities of a run by a constant to obtain equal median intensities across runs.
+Log transformation brings the peptide intensities into a close to normal distribution. Normalization aims to make the intensities of different runs more comparable to each other. The default normalization method is called &apos;equalize medians&apos;. It assumes that the majority of proteins do not change across runs. It shifts all intensities of a run by a constant to obtain equal median intensities across runs.
 
 ---
 

@@ -47,9 +47,6 @@
     "language": "python",
     "pyolite": true
   },
-  "tags": [
-    "jupyter-notebook"
-  ],
   "url": "/topics/data-science/tutorials/python-testing/tutorial.html",
   "topic_name": "data-science",
   "tutorial_name": "python-testing",
@@ -95,6 +92,7 @@
       "gitter": "hexylena",
       "joined": "2017-09",
       "elixir_node": "nl",
+      "fediverse": "https://galaxians.garden/hexylena",
       "contact_for_training": false,
       "location": {
         "country": "NL",
@@ -133,13 +131,9 @@
       "joined": "2020-11",
       "funder": true,
       "funding_statement": "A number of our employees contribute directly to the Galaxy Training Network and seek to make our higher education learning materials more accessible to a wider audience through the GTN platform. <a href=\"https://avans.nl/\">avans.nl</a>",
-      "id": "avans-atgm",
       "url": "https://training.galaxyproject.org/training-material/api/contributors/avans-atgm.json",
+      "id": "avans-atgm",
       "page": "https://training.galaxyproject.org/training-material/hall-of-fame/avans-atgm/"
     }
-  ],
-  "urls": {
-    "hands_on": "https://training.galaxyproject.org/training-material/api/topics//data-science/tutorials/python-testing/tutorial.json",
-    "slides": "https://training.galaxyproject.org/training-material/api/topics//data-science/tutorials/python-testing/tutorial.json"
-  }
+  ]
 }

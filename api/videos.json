@@ -70,6 +70,15 @@
                        
                                
 			{
+				"id": "admin/tutorials/backup-cleanup/slides",
+				"topic": "Galaxy Server administration",
+				"title": "Server Maintenance: Cleanup, Backup, and Restoration"
+			},
+								
+                               
+                       
+                               
+			{
 				"id": "admin/tutorials/gxadmin/slides",
 				"topic": "Galaxy Server administration",
 				"title": "Galaxy Monitoring with gxadmin"
@@ -101,15 +110,6 @@
                        
                                
                        
-                               
-                       
-                               
-			{
-				"id": "admin/tutorials/maintenance/slides",
-				"topic": "Galaxy Server administration",
-				"title": "Server Maintenance and Backups"
-			},
-								
                                
                        
                                
@@ -193,9 +193,17 @@
 			{
 				"id": "admin/tutorials/users-groups-quotas/slides",
 				"topic": "Galaxy Server administration",
-				"title": "User, Role, Group and Quota managment"
+				"title": "User, Role, Group, Quota, and Authentication managment"
 			},
 								
+                               
+                       
+                               
+                       
+                               
+                       
+                               
+                       
                                
                        
                                
@@ -243,9 +251,18 @@
                        
                                
 			{
-				"id": "ai4life/tutorials/example-slides/slides",
+				"id": "ai4life/tutorials/welcome-bioimageio/slides",
 				"topic": "Image analysis using Deep Learning",
-				"title": "Example Slide Deck"
+				"title": "Welcome to the BioImage Model Zoo"
+			},
+								
+                               
+                       
+                               
+			{
+				"id": "ai4life/tutorials/getting-started/slides",
+				"topic": "Image analysis using Deep Learning",
+				"title": "BioImage Model Zoo: Advanced models in one-click"
 			},
 								
                                
@@ -658,6 +675,21 @@
                        
                        
                        
+                               
+                       
+                               
+                       
+                               
+                       
+                               
+                       
+                               
+                       
+               
+					
+                       
+                       
+                       
                
 					
                        
@@ -807,10 +839,14 @@
                        
                                
                        
+                               
+                       
                
 					
                        
                        
+                       
+                               
                        
                                
                        
@@ -953,6 +989,11 @@
                        
                        
                        
+               
+					
+                       
+                       
+                       
                                
                        
                                
@@ -974,6 +1015,8 @@
 				"title": "An introduction to scRNA-seq data analysis"
 			},
 								
+                               
+                       
                                
                        
                                
@@ -1017,6 +1060,8 @@
 					
                        
                        
+                       
+                               
                        
                                
                        

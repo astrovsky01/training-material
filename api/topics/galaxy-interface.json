@@ -65,6 +65,7 @@
       "gitter": "hexylena",
       "joined": "2017-09",
       "elixir_node": "nl",
+      "fediverse": "https://galaxians.garden/hexylena",
       "contact_for_training": false,
       "location": {
         "country": "NL",
@@ -165,19 +166,6 @@
       "slides": false,
       "workflows": [
         {
-          "workflow": "workflow_reports_final_workflow.ga",
-          "tests": false,
-          "url": "https://training.galaxyproject.org/training-material/topics/galaxy-interface/tutorials/workflow-reports/workflows/workflow_reports_final_workflow.ga",
-          "path": "topics/galaxy-interface/tutorials/workflow-reports/workflows/workflow_reports_final_workflow.ga",
-          "wfid": "galaxy-interface-workflow-reports",
-          "wfname": "workflow_reports_final_workflow",
-          "trs_endpoint": "https://training.galaxyproject.org/training-material/api/ga4gh/trs/v2/tools/galaxy-interface-workflow-reports/versions/workflow_reports_final_workflow",
-          "license": null,
-          "creators": [
-
-          ]
-        },
-        {
           "workflow": "galaxy-101-everyone.ga",
           "tests": false,
           "url": "https://training.galaxyproject.org/training-material/topics/galaxy-interface/tutorials/workflow-reports/workflows/galaxy-101-everyone.ga",
@@ -185,6 +173,19 @@
           "wfid": "galaxy-interface-workflow-reports",
           "wfname": "galaxy-101-everyone",
           "trs_endpoint": "https://training.galaxyproject.org/training-material/api/ga4gh/trs/v2/tools/galaxy-interface-workflow-reports/versions/galaxy-101-everyone",
+          "license": null,
+          "creators": [
+
+          ]
+        },
+        {
+          "workflow": "workflow_reports_final_workflow.ga",
+          "tests": false,
+          "url": "https://training.galaxyproject.org/training-material/topics/galaxy-interface/tutorials/workflow-reports/workflows/workflow_reports_final_workflow.ga",
+          "path": "topics/galaxy-interface/tutorials/workflow-reports/workflows/workflow_reports_final_workflow.ga",
+          "wfid": "galaxy-interface-workflow-reports",
+          "wfname": "workflow_reports_final_workflow",
+          "trs_endpoint": "https://training.galaxyproject.org/training-material/api/ga4gh/trs/v2/tools/galaxy-interface-workflow-reports/versions/workflow_reports_final_workflow",
           "license": null,
           "creators": [
 
@@ -243,6 +244,7 @@
           "gitter": "hexylena",
           "joined": "2017-09",
           "elixir_node": "nl",
+          "fediverse": "https://galaxians.garden/hexylena",
           "contact_for_training": false,
           "location": {
             "country": "NL",
@@ -284,16 +286,17 @@
           "avatar": "https://www.erasmusplus.nl/assets/images/logo.png",
           "github": false,
           "funder": true,
+          "url": "https://training.galaxyproject.org/training-material/api/contributors/erasmusplus.json",
           "funding_id": "2020-1-NL01-KA203-064717",
+          "funding_system": "erasmusplus",
           "funding_statement": "This project (<a href=\"https://ec.europa.eu/programmes/erasmus-plus/projects/eplus-project-details/#project/2020-1-NL01-KA203-064717\"><code class=\"language-plaintext highlighter-rouge\">2020-1-NL01-KA203-064717</code></a>) is funded with the support of the Erasmus+ programme of the European Union. Their funding has supported a large number of tutorials within the GTN across a wide array of topics.\n<img src=\"https://gallantries.github.io/assets/images/logosbeneficaireserasmusright_en.jpg\" alt=\"eu flag with the text: with the support of the erasmus programme of the european union\" />",
           "id": "erasmusplus",
-          "url": "https://training.galaxyproject.org/training-material/api/contributors/erasmusplus.json",
           "page": "https://training.galaxyproject.org/training-material/hall-of-fame/erasmusplus/"
         }
       ],
       "urls": {
-        "hands_on": "https://training.galaxyproject.org/training-material/api/topics//galaxy-interface/tutorials/workflow-reports/tutorial.json",
-        "slides": "https://training.galaxyproject.org/training-material/api/topics//galaxy-interface/tutorials/workflow-reports/tutorial.json"
+        "hands_on": "https://training.galaxyproject.org/training-material/api/topics/galaxy-interface/tutorials/workflow-reports/tutorial.json",
+        "slides": "https://training.galaxyproject.org/training-material/api/topics/galaxy-interface/tutorials/workflow-reports/tutorial.json"
       }
     },
     {
@@ -390,8 +393,8 @@
       },
       "type": "tutorial",
       "urls": {
-        "hands_on": "https://training.galaxyproject.org/training-material/api/topics//galaxy-interface/tutorials/workflow-editor/tutorial.json",
-        "slides": "https://training.galaxyproject.org/training-material/api/topics//galaxy-interface/tutorials/workflow-editor/tutorial.json"
+        "hands_on": "https://training.galaxyproject.org/training-material/api/topics/galaxy-interface/tutorials/workflow-editor/tutorial.json",
+        "slides": "https://training.galaxyproject.org/training-material/api/topics/galaxy-interface/tutorials/workflow-editor/tutorial.json"
       }
     },
     {
@@ -501,8 +504,8 @@
       },
       "type": "tutorial",
       "urls": {
-        "hands_on": "https://training.galaxyproject.org/training-material/api/topics//galaxy-interface/tutorials/upload-data-to-ena/tutorial.json",
-        "slides": "https://training.galaxyproject.org/training-material/api/topics//galaxy-interface/tutorials/upload-data-to-ena/tutorial.json"
+        "hands_on": "https://training.galaxyproject.org/training-material/api/topics/galaxy-interface/tutorials/upload-data-to-ena/tutorial.json",
+        "slides": "https://training.galaxyproject.org/training-material/api/topics/galaxy-interface/tutorials/upload-data-to-ena/tutorial.json"
       }
     },
     {
@@ -581,14 +584,16 @@
       },
       "type": "tutorial",
       "urls": {
-        "hands_on": "https://training.galaxyproject.org/training-material/api/topics//galaxy-interface/tutorials/intermine/tutorial.json",
-        "slides": "https://training.galaxyproject.org/training-material/api/topics//galaxy-interface/tutorials/intermine/tutorial.json"
+        "hands_on": "https://training.galaxyproject.org/training-material/api/topics/galaxy-interface/tutorials/intermine/tutorial.json",
+        "slides": "https://training.galaxyproject.org/training-material/api/topics/galaxy-interface/tutorials/intermine/tutorial.json"
       }
     },
     {
       "layout": "tutorial_hands_on",
       "redirect_from": [
-        "/topics/galaxy-ui/tutorials/workflow-parameters/tutorial"
+        "/topics/galaxy-ui/tutorials/workflow-parameters/tutorial",
+        "/short/galaxy-interface/workflow-parameters",
+        "/short/T00164"
       ],
       "title": "Using Workflow Parameters",
       "tags": [
@@ -623,6 +628,7 @@
           "gitter": "hexylena",
           "joined": "2017-09",
           "elixir_node": "nl",
+          "fediverse": "https://galaxians.garden/hexylena",
           "contact_for_training": false,
           "location": {
             "country": "NL",
@@ -710,8 +716,8 @@
       },
       "type": "tutorial",
       "urls": {
-        "hands_on": "https://training.galaxyproject.org/training-material/api/topics//galaxy-interface/tutorials/workflow-parameters/tutorial.json",
-        "slides": "https://training.galaxyproject.org/training-material/api/topics//galaxy-interface/tutorials/workflow-parameters/tutorial.json"
+        "hands_on": "https://training.galaxyproject.org/training-material/api/topics/galaxy-interface/tutorials/workflow-parameters/tutorial.json",
+        "slides": "https://training.galaxyproject.org/training-material/api/topics/galaxy-interface/tutorials/workflow-parameters/tutorial.json"
       }
     },
     {
@@ -855,8 +861,8 @@
       },
       "type": "tutorial",
       "urls": {
-        "hands_on": "https://training.galaxyproject.org/training-material/api/topics//galaxy-interface/tutorials/workflow-automation/tutorial.json",
-        "slides": "https://training.galaxyproject.org/training-material/api/topics//galaxy-interface/tutorials/workflow-automation/tutorial.json"
+        "hands_on": "https://training.galaxyproject.org/training-material/api/topics/galaxy-interface/tutorials/workflow-automation/tutorial.json",
+        "slides": "https://training.galaxyproject.org/training-material/api/topics/galaxy-interface/tutorials/workflow-automation/tutorial.json"
       }
     },
     {
@@ -935,8 +941,8 @@
       },
       "type": "tutorial",
       "urls": {
-        "hands_on": "https://training.galaxyproject.org/training-material/api/topics//galaxy-interface/tutorials/galaxy-on-dockstore/slides.json",
-        "slides": "https://training.galaxyproject.org/training-material/api/topics//galaxy-interface/tutorials/galaxy-on-dockstore/slides.json"
+        "hands_on": "https://training.galaxyproject.org/training-material/api/topics/galaxy-interface/tutorials/galaxy-on-dockstore/slides.json",
+        "slides": "https://training.galaxyproject.org/training-material/api/topics/galaxy-interface/tutorials/galaxy-on-dockstore/slides.json"
       }
     },
     {
@@ -1095,15 +1101,17 @@
       },
       "type": "tutorial",
       "urls": {
-        "hands_on": "https://training.galaxyproject.org/training-material/api/topics//galaxy-interface/tutorials/ncbi-sarf/tutorial.json",
-        "slides": "https://training.galaxyproject.org/training-material/api/topics//galaxy-interface/tutorials/ncbi-sarf/tutorial.json"
+        "hands_on": "https://training.galaxyproject.org/training-material/api/topics/galaxy-interface/tutorials/ncbi-sarf/tutorial.json",
+        "slides": "https://training.galaxyproject.org/training-material/api/topics/galaxy-interface/tutorials/ncbi-sarf/tutorial.json"
       }
     },
     {
       "layout": "tutorial_slides",
       "logo": "GTN",
       "redirect_from": [
-        "/topics/galaxy-data-manipulation/tutorials/get-data/slides"
+        "/topics/galaxy-data-manipulation/tutorials/get-data/slides",
+        "/short/galaxy-interface/get-data/slides",
+        "/short/S00062"
       ],
       "title": "Getting data into Galaxy",
       "zenodo_link": "",
@@ -1191,14 +1199,16 @@
       },
       "type": "tutorial",
       "urls": {
-        "hands_on": "https://training.galaxyproject.org/training-material/api/topics//galaxy-interface/tutorials/get-data/slides.json",
-        "slides": "https://training.galaxyproject.org/training-material/api/topics//galaxy-interface/tutorials/get-data/slides.json"
+        "hands_on": "https://training.galaxyproject.org/training-material/api/topics/galaxy-interface/tutorials/get-data/slides.json",
+        "slides": "https://training.galaxyproject.org/training-material/api/topics/galaxy-interface/tutorials/get-data/slides.json"
       }
     },
     {
       "layout": "tutorial_hands_on",
       "redirect_from": [
-        "/topics/galaxy-data-manipulation/tutorials/download-delete-data/tutorial"
+        "/topics/galaxy-data-manipulation/tutorials/download-delete-data/tutorial",
+        "/short/galaxy-interface/download-delete-data",
+        "/short/T00147"
       ],
       "title": "Downloading and Deleting Data in Galaxy",
       "zenodo_link": "",
@@ -1236,6 +1246,7 @@
           "gitter": "hexylena",
           "joined": "2017-09",
           "elixir_node": "nl",
+          "fediverse": "https://galaxians.garden/hexylena",
           "contact_for_training": false,
           "location": {
             "country": "NL",
@@ -1278,14 +1289,16 @@
       },
       "type": "tutorial",
       "urls": {
-        "hands_on": "https://training.galaxyproject.org/training-material/api/topics//galaxy-interface/tutorials/download-delete-data/tutorial.json",
-        "slides": "https://training.galaxyproject.org/training-material/api/topics//galaxy-interface/tutorials/download-delete-data/tutorial.json"
+        "hands_on": "https://training.galaxyproject.org/training-material/api/topics/galaxy-interface/tutorials/download-delete-data/tutorial.json",
+        "slides": "https://training.galaxyproject.org/training-material/api/topics/galaxy-interface/tutorials/download-delete-data/tutorial.json"
       }
     },
     {
       "layout": "tutorial_hands_on",
       "redirect_from": [
-        "/topics/galaxy-data-manipulation/tutorials/processing-many-samples-at-once/tutorial"
+        "/topics/galaxy-data-manipulation/tutorials/processing-many-samples-at-once/tutorial",
+        "/short/galaxy-interface/processing-many-samples-at-once",
+        "/short/T00156"
       ],
       "title": "Multisample Analysis",
       "tags": [
@@ -1345,14 +1358,16 @@
       },
       "type": "tutorial",
       "urls": {
-        "hands_on": "https://training.galaxyproject.org/training-material/api/topics//galaxy-interface/tutorials/processing-many-samples-at-once/tutorial.json",
-        "slides": "https://training.galaxyproject.org/training-material/api/topics//galaxy-interface/tutorials/processing-many-samples-at-once/tutorial.json"
+        "hands_on": "https://training.galaxyproject.org/training-material/api/topics/galaxy-interface/tutorials/processing-many-samples-at-once/tutorial.json",
+        "slides": "https://training.galaxyproject.org/training-material/api/topics/galaxy-interface/tutorials/processing-many-samples-at-once/tutorial.json"
       }
     },
     {
       "layout": "tutorial_hands_on",
       "redirect_from": [
-        "/topics/galaxy-data-manipulation/tutorials/group-tags/tutorial"
+        "/topics/galaxy-data-manipulation/tutorials/group-tags/tutorial",
+        "/short/galaxy-interface/group-tags",
+        "/short/T00149"
       ],
       "title": "Group tags for complex experimental designs",
       "zenodo_link": "",
@@ -1408,14 +1423,16 @@
       },
       "type": "tutorial",
       "urls": {
-        "hands_on": "https://training.galaxyproject.org/training-material/api/topics//galaxy-interface/tutorials/group-tags/tutorial.json",
-        "slides": "https://training.galaxyproject.org/training-material/api/topics//galaxy-interface/tutorials/group-tags/tutorial.json"
+        "hands_on": "https://training.galaxyproject.org/training-material/api/topics/galaxy-interface/tutorials/group-tags/tutorial.json",
+        "slides": "https://training.galaxyproject.org/training-material/api/topics/galaxy-interface/tutorials/group-tags/tutorial.json"
       }
     },
     {
       "layout": "tutorial_hands_on",
       "redirect_from": [
-        "/topics/galaxy-ui/tutorials/history/tutorial"
+        "/topics/galaxy-ui/tutorials/history/tutorial",
+        "/short/galaxy-interface/history",
+        "/short/T00150"
       ],
       "title": "Understanding Galaxy history system",
       "zenodo_link": "",
@@ -1498,6 +1515,16 @@
         {
           "name": "Martin Čech",
           "email": "marten@bx.psu.edu",
+          "gitter": "martenson",
+          "orcid": "0000-0002-9318-1781",
+          "elixir_node": "cz",
+          "contact_for_training": true,
+          "location": {
+            "country": "USA",
+            "lat": 37.0,
+            "lon": -122.0
+          },
+          "fediverse": "https://mastodon.world/@martenson",
           "joined": "2017-09",
           "id": "martenson",
           "url": "https://training.galaxyproject.org/training-material/api/contributors/martenson.json",
@@ -1548,7 +1575,7 @@
             "lat": 45.77,
             "lon": 3.08
           },
-          "fediverse": "bebatut@piaille.fr",
+          "fediverse": "https://piaille.fr/@bebatut",
           "id": "bebatut",
           "url": "https://training.galaxyproject.org/training-material/api/contributors/bebatut.json",
           "page": "https://training.galaxyproject.org/training-material/hall-of-fame/bebatut/"
@@ -1574,6 +1601,7 @@
           "gitter": "hexylena",
           "joined": "2017-09",
           "elixir_node": "nl",
+          "fediverse": "https://galaxians.garden/hexylena",
           "contact_for_training": false,
           "location": {
             "country": "NL",
@@ -1586,8 +1614,8 @@
         }
       ],
       "urls": {
-        "hands_on": "https://training.galaxyproject.org/training-material/api/topics//galaxy-interface/tutorials/history/tutorial.json",
-        "slides": "https://training.galaxyproject.org/training-material/api/topics//galaxy-interface/tutorials/history/tutorial.json"
+        "hands_on": "https://training.galaxyproject.org/training-material/api/topics/galaxy-interface/tutorials/history/tutorial.json",
+        "slides": "https://training.galaxyproject.org/training-material/api/topics/galaxy-interface/tutorials/history/tutorial.json"
       }
     },
     {
@@ -1617,6 +1645,7 @@
           "gitter": "hexylena",
           "joined": "2017-09",
           "elixir_node": "nl",
+          "fediverse": "https://galaxians.garden/hexylena",
           "contact_for_training": false,
           "location": {
             "country": "NL",
@@ -1667,14 +1696,16 @@
       },
       "type": "tutorial",
       "urls": {
-        "hands_on": "https://training.galaxyproject.org/training-material/api/topics//galaxy-interface/tutorials/search/tutorial.json",
-        "slides": "https://training.galaxyproject.org/training-material/api/topics//galaxy-interface/tutorials/search/tutorial.json"
+        "hands_on": "https://training.galaxyproject.org/training-material/api/topics/galaxy-interface/tutorials/search/tutorial.json",
+        "slides": "https://training.galaxyproject.org/training-material/api/topics/galaxy-interface/tutorials/search/tutorial.json"
       }
     },
     {
       "layout": "tutorial_hands_on",
       "redirect_from": [
-        "/topics/galaxy-ui/tutorials/galaxy-intro-jupyter/tutorial"
+        "/topics/galaxy-ui/tutorials/galaxy-intro-jupyter/tutorial",
+        "/short/galaxy-interface/galaxy-intro-jupyter",
+        "/short/T00148"
       ],
       "title": "Use Jupyter notebooks in Galaxy",
       "zenodo_link": "https://zenodo.org/record/1185122/files/GSM461176_untreat_single.counts",
@@ -1734,14 +1765,16 @@
       },
       "type": "tutorial",
       "urls": {
-        "hands_on": "https://training.galaxyproject.org/training-material/api/topics//galaxy-interface/tutorials/galaxy-intro-jupyter/tutorial.json",
-        "slides": "https://training.galaxyproject.org/training-material/api/topics//galaxy-interface/tutorials/galaxy-intro-jupyter/tutorial.json"
+        "hands_on": "https://training.galaxyproject.org/training-material/api/topics/galaxy-interface/tutorials/galaxy-intro-jupyter/tutorial.json",
+        "slides": "https://training.galaxyproject.org/training-material/api/topics/galaxy-interface/tutorials/galaxy-intro-jupyter/tutorial.json"
       }
     },
     {
       "layout": "tutorial_hands_on",
       "redirect_from": [
-        "/topics/galaxy-ui/tutorials/jupyterlab/tutorial"
+        "/topics/galaxy-ui/tutorials/jupyterlab/tutorial",
+        "/short/galaxy-interface/jupyterlab",
+        "/short/T00153"
       ],
       "title": "JupyterLab in Galaxy",
       "zenodo_link": "",
@@ -1823,6 +1856,7 @@
           "gitter": "hexylena",
           "joined": "2017-09",
           "elixir_node": "nl",
+          "fediverse": "https://galaxians.garden/hexylena",
           "contact_for_training": false,
           "location": {
             "country": "NL",
@@ -1835,14 +1869,16 @@
         }
       ],
       "urls": {
-        "hands_on": "https://training.galaxyproject.org/training-material/api/topics//galaxy-interface/tutorials/jupyterlab/tutorial.json",
-        "slides": "https://training.galaxyproject.org/training-material/api/topics//galaxy-interface/tutorials/jupyterlab/tutorial.json"
+        "hands_on": "https://training.galaxyproject.org/training-material/api/topics/galaxy-interface/tutorials/jupyterlab/tutorial.json",
+        "slides": "https://training.galaxyproject.org/training-material/api/topics/galaxy-interface/tutorials/jupyterlab/tutorial.json"
       }
     },
     {
       "layout": "tutorial_hands_on",
       "redirect_from": [
-        "/topics/galaxy-data-manipulation/tutorials/collections/tutorial"
+        "/topics/galaxy-data-manipulation/tutorials/collections/tutorial",
+        "/short/galaxy-interface/collections",
+        "/short/T00146"
       ],
       "title": "Using dataset collections",
       "zenodo_link": "https://doi.org/10.5281/zenodo.5119008",
@@ -1946,14 +1982,16 @@
       },
       "type": "tutorial",
       "urls": {
-        "hands_on": "https://training.galaxyproject.org/training-material/api/topics//galaxy-interface/tutorials/collections/tutorial.json",
-        "slides": "https://training.galaxyproject.org/training-material/api/topics//galaxy-interface/tutorials/collections/tutorial.json"
+        "hands_on": "https://training.galaxyproject.org/training-material/api/topics/galaxy-interface/tutorials/collections/tutorial.json",
+        "slides": "https://training.galaxyproject.org/training-material/api/topics/galaxy-interface/tutorials/collections/tutorial.json"
       }
     },
     {
       "layout": "tutorial_hands_on",
       "redirect_from": [
-        "/topics/galaxy-data-manipulation/tutorials/name-tags/tutorial"
+        "/topics/galaxy-data-manipulation/tutorials/name-tags/tutorial",
+        "/short/galaxy-interface/name-tags",
+        "/short/T00154"
       ],
       "title": "Name tags for following complex histories",
       "zenodo_link": "",
@@ -1979,6 +2017,7 @@
           "gitter": "hexylena",
           "joined": "2017-09",
           "elixir_node": "nl",
+          "fediverse": "https://galaxians.garden/hexylena",
           "contact_for_training": false,
           "location": {
             "country": "NL",
@@ -2021,14 +2060,16 @@
       },
       "type": "tutorial",
       "urls": {
-        "hands_on": "https://training.galaxyproject.org/training-material/api/topics//galaxy-interface/tutorials/name-tags/tutorial.json",
-        "slides": "https://training.galaxyproject.org/training-material/api/topics//galaxy-interface/tutorials/name-tags/tutorial.json"
+        "hands_on": "https://training.galaxyproject.org/training-material/api/topics/galaxy-interface/tutorials/name-tags/tutorial.json",
+        "slides": "https://training.galaxyproject.org/training-material/api/topics/galaxy-interface/tutorials/name-tags/tutorial.json"
       }
     },
     {
       "layout": "tutorial_hands_on",
       "redirect_from": [
-        "/topics/galaxy-ui/tutorials/history-to-workflow/tutorial"
+        "/topics/galaxy-ui/tutorials/history-to-workflow/tutorial",
+        "/short/galaxy-interface/history-to-workflow",
+        "/short/T00151"
       ],
       "title": "Extracting Workflows from Histories",
       "tags": [
@@ -2092,14 +2133,16 @@
       },
       "type": "tutorial",
       "urls": {
-        "hands_on": "https://training.galaxyproject.org/training-material/api/topics//galaxy-interface/tutorials/history-to-workflow/tutorial.json",
-        "slides": "https://training.galaxyproject.org/training-material/api/topics//galaxy-interface/tutorials/history-to-workflow/tutorial.json"
+        "hands_on": "https://training.galaxyproject.org/training-material/api/topics/galaxy-interface/tutorials/history-to-workflow/tutorial.json",
+        "slides": "https://training.galaxyproject.org/training-material/api/topics/galaxy-interface/tutorials/history-to-workflow/tutorial.json"
       }
     },
     {
       "layout": "tutorial_hands_on",
       "redirect_from": [
-        "/topics/galaxy-ui/tutorials/rstudio/tutorial"
+        "/topics/galaxy-ui/tutorials/rstudio/tutorial",
+        "/short/galaxy-interface/rstudio",
+        "/short/T00157"
       ],
       "title": "RStudio in Galaxy",
       "zenodo_link": "",
@@ -2141,7 +2184,7 @@
             "lat": 45.77,
             "lon": 3.08
           },
-          "fediverse": "bebatut@piaille.fr",
+          "fediverse": "https://piaille.fr/@bebatut",
           "id": "bebatut",
           "url": "https://training.galaxyproject.org/training-material/api/contributors/bebatut.json",
           "page": "https://training.galaxyproject.org/training-material/hall-of-fame/bebatut/"
@@ -2175,10 +2218,11 @@
           "avatar": "https://www.erasmusplus.nl/assets/images/logo.png",
           "github": false,
           "funder": true,
+          "url": "https://training.galaxyproject.org/training-material/api/contributors/erasmusplus.json",
           "funding_id": "2020-1-NL01-KA203-064717",
+          "funding_system": "erasmusplus",
           "funding_statement": "This project (<a href=\"https://ec.europa.eu/programmes/erasmus-plus/projects/eplus-project-details/#project/2020-1-NL01-KA203-064717\"><code class=\"language-plaintext highlighter-rouge\">2020-1-NL01-KA203-064717</code></a>) is funded with the support of the Erasmus+ programme of the European Union. Their funding has supported a large number of tutorials within the GTN across a wide array of topics.\n<img src=\"https://gallantries.github.io/assets/images/logosbeneficaireserasmusright_en.jpg\" alt=\"eu flag with the text: with the support of the erasmus programme of the european union\" />",
           "id": "erasmusplus",
-          "url": "https://training.galaxyproject.org/training-material/api/contributors/erasmusplus.json",
           "page": "https://training.galaxyproject.org/training-material/hall-of-fame/erasmusplus/"
         }
       ],
@@ -2213,14 +2257,16 @@
       },
       "type": "tutorial",
       "urls": {
-        "hands_on": "https://training.galaxyproject.org/training-material/api/topics//galaxy-interface/tutorials/rstudio/tutorial.json",
-        "slides": "https://training.galaxyproject.org/training-material/api/topics//galaxy-interface/tutorials/rstudio/tutorial.json"
+        "hands_on": "https://training.galaxyproject.org/training-material/api/topics/galaxy-interface/tutorials/rstudio/tutorial.json",
+        "slides": "https://training.galaxyproject.org/training-material/api/topics/galaxy-interface/tutorials/rstudio/tutorial.json"
       }
     },
     {
       "layout": "tutorial_hands_on",
       "redirect_from": [
-        "/topics/galaxy-data-manipulation/tutorials/upload-rules/tutorial"
+        "/topics/galaxy-data-manipulation/tutorials/upload-rules/tutorial",
+        "/short/galaxy-interface/upload-rules",
+        "/short/T00160"
       ],
       "title": "Rule Based Uploader",
       "zenodo_link": "",
@@ -2275,6 +2321,7 @@
           "gitter": "hexylena",
           "joined": "2017-09",
           "elixir_node": "nl",
+          "fediverse": "https://galaxians.garden/hexylena",
           "contact_for_training": false,
           "location": {
             "country": "NL",
@@ -2350,8 +2397,8 @@
       },
       "type": "tutorial",
       "urls": {
-        "hands_on": "https://training.galaxyproject.org/training-material/api/topics//galaxy-interface/tutorials/upload-rules/tutorial.json",
-        "slides": "https://training.galaxyproject.org/training-material/api/topics//galaxy-interface/tutorials/upload-rules/tutorial.json"
+        "hands_on": "https://training.galaxyproject.org/training-material/api/topics/galaxy-interface/tutorials/upload-rules/tutorial.json",
+        "slides": "https://training.galaxyproject.org/training-material/api/topics/galaxy-interface/tutorials/upload-rules/tutorial.json"
       }
     },
     {
@@ -2401,6 +2448,7 @@
           "gitter": "hexylena",
           "joined": "2017-09",
           "elixir_node": "nl",
+          "fediverse": "https://galaxians.garden/hexylena",
           "contact_for_training": false,
           "location": {
             "country": "NL",
@@ -2443,8 +2491,8 @@
       },
       "type": "tutorial",
       "urls": {
-        "hands_on": "https://training.galaxyproject.org/training-material/api/topics//galaxy-interface/tutorials/upload-rules-advanced/tutorial.json",
-        "slides": "https://training.galaxyproject.org/training-material/api/topics//galaxy-interface/tutorials/upload-rules-advanced/tutorial.json"
+        "hands_on": "https://training.galaxyproject.org/training-material/api/topics/galaxy-interface/tutorials/upload-rules-advanced/tutorial.json",
+        "slides": "https://training.galaxyproject.org/training-material/api/topics/galaxy-interface/tutorials/upload-rules-advanced/tutorial.json"
       }
     }
   ]

@@ -54,19 +54,6 @@
   "slides": false,
   "workflows": [
     {
-      "workflow": "workflow-generate-dataset-for-assembly-tutorial.ga",
-      "tests": false,
-      "url": "https://training.galaxyproject.org/training-material/topics/assembly/tutorials/metagenomics-assembly/workflows/workflow-generate-dataset-for-assembly-tutorial.ga",
-      "path": "topics/assembly/tutorials/metagenomics-assembly/workflows/workflow-generate-dataset-for-assembly-tutorial.ga",
-      "wfid": "assembly-metagenomics-assembly",
-      "wfname": "workflow-generate-dataset-for-assembly-tutorial",
-      "trs_endpoint": "https://training.galaxyproject.org/training-material/api/ga4gh/trs/v2/tools/assembly-metagenomics-assembly/versions/workflow-generate-dataset-for-assembly-tutorial",
-      "license": null,
-      "creators": [
-
-      ]
-    },
-    {
       "workflow": "metagenomics_assembly_tutorial_workflow.ga",
       "tests": false,
       "url": "https://training.galaxyproject.org/training-material/topics/assembly/tutorials/metagenomics-assembly/workflows/metagenomics_assembly_tutorial_workflow.ga",
@@ -74,6 +61,19 @@
       "wfid": "assembly-metagenomics-assembly",
       "wfname": "metagenomics_assembly_tutorial_workflow",
       "trs_endpoint": "https://training.galaxyproject.org/training-material/api/ga4gh/trs/v2/tools/assembly-metagenomics-assembly/versions/metagenomics_assembly_tutorial_workflow",
+      "license": null,
+      "creators": [
+
+      ]
+    },
+    {
+      "workflow": "workflow-generate-dataset-for-assembly-tutorial.ga",
+      "tests": false,
+      "url": "https://training.galaxyproject.org/training-material/topics/assembly/tutorials/metagenomics-assembly/workflows/workflow-generate-dataset-for-assembly-tutorial.ga",
+      "path": "topics/assembly/tutorials/metagenomics-assembly/workflows/workflow-generate-dataset-for-assembly-tutorial.ga",
+      "wfid": "assembly-metagenomics-assembly",
+      "wfname": "workflow-generate-dataset-for-assembly-tutorial",
+      "trs_endpoint": "https://training.galaxyproject.org/training-material/api/ga4gh/trs/v2/tools/assembly-metagenomics-assembly/versions/workflow-generate-dataset-for-assembly-tutorial",
       "license": null,
       "creators": [
 
@@ -140,14 +140,10 @@
         "lat": 45.77,
         "lon": 3.08
       },
-      "fediverse": "bebatut@piaille.fr",
+      "fediverse": "https://piaille.fr/@bebatut",
       "id": "bebatut",
       "url": "https://training.galaxyproject.org/training-material/api/contributors/bebatut.json",
       "page": "https://training.galaxyproject.org/training-material/hall-of-fame/bebatut/"
     }
-  ],
-  "urls": {
-    "hands_on": "https://training.galaxyproject.org/training-material/api/topics//assembly/tutorials/metagenomics-assembly/tutorial.json",
-    "slides": "https://training.galaxyproject.org/training-material/api/topics//assembly/tutorials/metagenomics-assembly/tutorial.json"
-  }
+  ]
 }

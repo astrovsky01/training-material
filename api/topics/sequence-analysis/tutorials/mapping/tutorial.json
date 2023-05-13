@@ -67,7 +67,7 @@
         "lat": 45.77,
         "lon": 3.08
       },
-      "fediverse": "bebatut@piaille.fr",
+      "fediverse": "https://piaille.fr/@bebatut",
       "id": "bebatut",
       "url": "https://training.galaxyproject.org/training-material/api/contributors/bebatut.json",
       "page": "https://training.galaxyproject.org/training-material/hall-of-fame/bebatut/"
@@ -80,6 +80,7 @@
       "gitter": "hexylena",
       "joined": "2017-09",
       "elixir_node": "nl",
+      "fediverse": "https://galaxians.garden/hexylena",
       "contact_for_training": false,
       "location": {
         "country": "NL",
@@ -174,19 +175,6 @@
   "slides": true,
   "workflows": [
     {
-      "workflow": "mapping.ga",
-      "tests": true,
-      "url": "https://training.galaxyproject.org/training-material/topics/sequence-analysis/tutorials/mapping/workflows/mapping.ga",
-      "path": "topics/sequence-analysis/tutorials/mapping/workflows/mapping.ga",
-      "wfid": "sequence-analysis-mapping",
-      "wfname": "mapping",
-      "trs_endpoint": "https://training.galaxyproject.org/training-material/api/ga4gh/trs/v2/tools/sequence-analysis-mapping/versions/mapping",
-      "license": null,
-      "creators": [
-
-      ]
-    },
-    {
       "workflow": "mapping-jbrowse.ga",
       "tests": false,
       "url": "https://training.galaxyproject.org/training-material/topics/sequence-analysis/tutorials/mapping/workflows/mapping-jbrowse.ga",
@@ -194,6 +182,19 @@
       "wfid": "sequence-analysis-mapping",
       "wfname": "mapping-jbrowse",
       "trs_endpoint": "https://training.galaxyproject.org/training-material/api/ga4gh/trs/v2/tools/sequence-analysis-mapping/versions/mapping-jbrowse",
+      "license": null,
+      "creators": [
+
+      ]
+    },
+    {
+      "workflow": "mapping.ga",
+      "tests": true,
+      "url": "https://training.galaxyproject.org/training-material/topics/sequence-analysis/tutorials/mapping/workflows/mapping.ga",
+      "path": "topics/sequence-analysis/tutorials/mapping/workflows/mapping.ga",
+      "wfid": "sequence-analysis-mapping",
+      "wfname": "mapping",
+      "trs_endpoint": "https://training.galaxyproject.org/training-material/api/ga4gh/trs/v2/tools/sequence-analysis-mapping/versions/mapping",
       "license": null,
       "creators": [
 
@@ -223,9 +224,5 @@
     ],
     "video": false
   },
-  "type": "tutorial",
-  "urls": {
-    "hands_on": "https://training.galaxyproject.org/training-material/api/topics//sequence-analysis/tutorials/mapping/tutorial.json",
-    "slides": "https://training.galaxyproject.org/training-material/api/topics//sequence-analysis/tutorials/mapping/tutorial.json"
-  }
+  "type": "tutorial"
 }

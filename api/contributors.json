@@ -37,7 +37,7 @@
       "lat": 48.11,
       "lon": -1.64
     },
-    "fediverse": "abretaud@genomic.social",
+    "fediverse": "https://genomic.social/@abretaud",
     "id": "abretaud",
     "url": "https://training.galaxyproject.org/training-material/api/contributors/abretaud.json",
     "page": "https://training.galaxyproject.org/training-material/hall-of-fame/abretaud/"
@@ -212,6 +212,7 @@
   {
     "name": "Alex Ostrovsky",
     "email": "a.ostrovsky@mac.com",
+    "orcid": "0000-0002-7901-7109",
     "joined": "2019-06",
     "id": "astrovsky01",
     "url": "https://training.galaxyproject.org/training-material/api/contributors/astrovsky01.json",
@@ -285,7 +286,7 @@
       "lat": 45.77,
       "lon": 3.08
     },
-    "fediverse": "bebatut@piaille.fr",
+    "fediverse": "https://piaille.fr/@bebatut",
     "id": "bebatut",
     "url": "https://training.galaxyproject.org/training-material/api/contributors/bebatut.json",
     "page": "https://training.galaxyproject.org/training-material/hall-of-fame/bebatut/"
@@ -356,6 +357,7 @@
   {
     "name": "Clemens Blank",
     "email": "blankclemens@gmail.com",
+    "orcid": "0000-0002-1726-2256",
     "joined": "2017-09",
     "elixir_node": "de",
     "id": "blankclemens",
@@ -429,6 +431,18 @@
     "id": "cecilecanlet",
     "url": "https://training.galaxyproject.org/training-material/api/contributors/cecilecanlet.json",
     "page": "https://training.galaxyproject.org/training-material/hall-of-fame/cecilecanlet/"
+  },
+  {
+    "name": "Caterina Fuster-Barceló",
+    "joined": "2023-03",
+    "email": "cafuster@pa.uc3m.es",
+    "twitter": "cfusterbarcelo",
+    "linkedin": "caterinafusterb",
+    "orcid": "0000-0002-4784-6957",
+    "bio": "Post-doctoral researcher at UC3M",
+    "id": "cfusterbarcelo",
+    "url": "https://training.galaxyproject.org/training-material/api/contributors/cfusterbarcelo.json",
+    "page": "https://training.galaxyproject.org/training-material/hall-of-fame/cfusterbarcelo/"
   },
   {
     "name": "Charity Law",
@@ -658,6 +672,15 @@
     "page": "https://training.galaxyproject.org/training-material/hall-of-fame/eancelet/"
   },
   {
+    "name": "Laila Los",
+    "joined": "2023-04",
+    "elixir_node": "de",
+    "orcid": "0000-0002-2362-9720",
+    "id": "ElectronicBlueberry",
+    "url": "https://training.galaxyproject.org/training-material/api/contributors/ElectronicBlueberry.json",
+    "page": "https://training.galaxyproject.org/training-material/hall-of-fame/ElectronicBlueberry/"
+  },
+  {
     "name": "Emma Leith",
     "email": "leith023@umn.edu",
     "joined": "2019-07",
@@ -884,6 +907,15 @@
     "page": "https://training.galaxyproject.org/training-material/hall-of-fame/hdashnow/"
   },
   {
+    "name": "Helge Hecht",
+    "joined": "2020-01",
+    "email": "helge.hecht@recetox.muni.cz",
+    "orcid": "0000-0001-6744-996X",
+    "id": "hechth",
+    "url": "https://training.galaxyproject.org/training-material/api/contributors/hechth.json",
+    "page": "https://training.galaxyproject.org/training-material/hall-of-fame/hechth/"
+  },
+  {
     "name": "Florian Heyl",
     "joined": "2018-08",
     "elixir_node": "de",
@@ -900,6 +932,7 @@
     "gitter": "hexylena",
     "joined": "2017-09",
     "elixir_node": "nl",
+    "fediverse": "https://galaxians.garden/hexylena",
     "contact_for_training": false,
     "location": {
       "country": "NL",
@@ -971,6 +1004,14 @@
     "id": "ioanagry",
     "url": "https://training.galaxyproject.org/training-material/api/contributors/ioanagry.json",
     "page": "https://training.galaxyproject.org/training-material/hall-of-fame/ioanagry/"
+  },
+  {
+    "name": "Luca Pireddu",
+    "joined": "2023-04",
+    "orcid": "0000-0002-4663-5613",
+    "id": "ilveroluca",
+    "url": "https://training.galaxyproject.org/training-material/api/contributors/ilveroluca.json",
+    "page": "https://training.galaxyproject.org/training-material/hall-of-fame/ilveroluca/"
   },
   {
     "name": "Irelka Colina",
@@ -1228,6 +1269,24 @@
     "page": "https://training.galaxyproject.org/training-material/hall-of-fame/Khaled196/"
   },
   {
+    "name": "Bruno P. Kinoshita",
+    "joined": "2023-04",
+    "orcid": "0000-0001-8250-4074",
+    "elixir_node": "es",
+    "id": "kinow",
+    "url": "https://training.galaxyproject.org/training-material/api/contributors/kinow.json",
+    "page": "https://training.galaxyproject.org/training-material/hall-of-fame/kinow/"
+  },
+  {
+    "name": "Marco Enrico Piras",
+    "joined": "2023-04",
+    "orcid": "0000-0002-5207-0030",
+    "elixir_node": "it",
+    "id": "kikkomep",
+    "url": "https://training.galaxyproject.org/training-material/api/contributors/kikkomep.json",
+    "page": "https://training.galaxyproject.org/training-material/hall-of-fame/kikkomep/"
+  },
+  {
     "name": "Klemens Fröhlich",
     "joined": "2021-08",
     "id": "KlemensFroehlich",
@@ -1347,6 +1406,7 @@
   },
   {
     "name": "Mallory Freeberg",
+    "orcid": "0000-0003-2949-3921",
     "joined": "2017-09",
     "id": "malloryfreeberg",
     "url": "https://training.galaxyproject.org/training-material/api/contributors/malloryfreeberg.json",
@@ -1394,6 +1454,16 @@
   {
     "name": "Martin Čech",
     "email": "marten@bx.psu.edu",
+    "gitter": "martenson",
+    "orcid": "0000-0002-9318-1781",
+    "elixir_node": "cz",
+    "contact_for_training": true,
+    "location": {
+      "country": "USA",
+      "lat": 37.0,
+      "lon": -122.0
+    },
+    "fediverse": "https://mastodon.world/@martenson",
     "joined": "2017-09",
     "id": "martenson",
     "url": "https://training.galaxyproject.org/training-material/api/contributors/martenson.json",
@@ -1424,6 +1494,15 @@
     "id": "matthias313",
     "url": "https://training.galaxyproject.org/training-material/api/contributors/matthias313.json",
     "page": "https://training.galaxyproject.org/training-material/hall-of-fame/matthias313/"
+  },
+  {
+    "name": "Maxim Skoryk",
+    "email": "maximskoryk@gmail.com",
+    "orcid": "0000-0003-2056-8018",
+    "joined": "2023-03",
+    "id": "maximskorik",
+    "url": "https://training.galaxyproject.org/training-material/api/contributors/maximskorik.json",
+    "page": "https://training.galaxyproject.org/training-material/hall-of-fame/maximskorik/"
   },
   {
     "name": "Maria Doyle",
@@ -1510,7 +1589,11 @@
   },
   {
     "name": "Mira Kuntz",
+    "orcid": "0000-0003-4302-5091",
+    "gitter": "mira-miracoli:matrix.org",
+    "email": "kuntzm@informatik.uni-freiburg.de",
     "joined": "2022-07",
+    "elixir_node": "de",
     "id": "mira-miracoli",
     "url": "https://training.galaxyproject.org/training-material/api/contributors/mira-miracoli.json",
     "page": "https://training.galaxyproject.org/training-material/hall-of-fame/mira-miracoli/"
@@ -1534,6 +1617,7 @@
   {
     "name": "Mo Heydarian",
     "email": "mheydarian@gmail.com",
+    "orcid": "0000-0001-9449-9364",
     "joined": "2017-09",
     "id": "moheydarian",
     "url": "https://training.galaxyproject.org/training-material/api/contributors/moheydarian.json",
@@ -1773,7 +1857,17 @@
     "page": "https://training.galaxyproject.org/training-material/hall-of-fame/paulineauffret/"
   },
   {
+    "name": "Paul De Geest",
+    "joined": "2023-04",
+    "elixir_node": "be",
+    "orcid": "0000-0002-8940-4946",
+    "id": "pauldg",
+    "url": "https://training.galaxyproject.org/training-material/api/contributors/pauldg.json",
+    "page": "https://training.galaxyproject.org/training-material/hall-of-fame/pauldg/"
+  },
+  {
     "name": "Pavankumar Videm",
+    "orcid": "0000-0002-5192-126X",
     "joined": "2017-09",
     "id": "pavanvidem",
     "url": "https://training.galaxyproject.org/training-material/api/contributors/pavanvidem.json",
@@ -2029,6 +2123,15 @@
     "page": "https://training.galaxyproject.org/training-material/hall-of-fame/simonbray/"
   },
   {
+    "name": "Simone Leo",
+    "joined": "2023-04",
+    "elixir_node": "it",
+    "orcid": "0000-0001-8271-5429",
+    "id": "simleo",
+    "url": "https://training.galaxyproject.org/training-material/api/contributors/simleo.json",
+    "page": "https://training.galaxyproject.org/training-material/hall-of-fame/simleo/"
+  },
+  {
     "name": "Stéphanie Legras",
     "joined": "2017-09",
     "id": "slegras",
@@ -2054,6 +2157,22 @@
     "id": "Sofokli5",
     "url": "https://training.galaxyproject.org/training-material/api/contributors/Sofokli5.json",
     "page": "https://training.galaxyproject.org/training-material/hall-of-fame/Sofokli5/"
+  },
+  {
+    "name": "Sophia Hampe",
+    "joined": "2023-04",
+    "id": "sophia120199",
+    "url": "https://training.galaxyproject.org/training-material/api/contributors/sophia120199.json",
+    "page": "https://training.galaxyproject.org/training-material/hall-of-fame/sophia120199/"
+  },
+  {
+    "name": "Stian Soiland-Reyes",
+    "joined": "2023-04",
+    "orcid": "0000-0001-9842-9718",
+    "elixir_node": "uk",
+    "id": "stain",
+    "url": "https://training.galaxyproject.org/training-material/api/contributors/stain.json",
+    "page": "https://training.galaxyproject.org/training-material/hall-of-fame/stain/"
   },
   {
     "name": "Stéphanie Robin",
@@ -2334,6 +2453,15 @@
     "page": "https://training.galaxyproject.org/training-material/hall-of-fame/xgaia/"
   },
   {
+    "name": "Matej Troják",
+    "joined": "2021-06",
+    "email": "trojak@mail.muni.cz",
+    "orcid": "0000-0003-0841-2707",
+    "id": "xtrojak",
+    "url": "https://training.galaxyproject.org/training-material/api/contributors/xtrojak.json",
+    "page": "https://training.galaxyproject.org/training-material/hall-of-fame/xtrojak/"
+  },
+  {
     "name": "Yann Guitton",
     "joined": "2019-06",
     "id": "yguitton",
@@ -2386,10 +2514,11 @@
     "avatar": "https://www.erasmusplus.nl/assets/images/logo.png",
     "github": false,
     "funder": true,
+    "url": "https://training.galaxyproject.org/training-material/api/contributors/erasmusplus.json",
     "funding_id": "2020-1-NL01-KA203-064717",
+    "funding_system": "erasmusplus",
     "funding_statement": "This project (<a href=\"https://ec.europa.eu/programmes/erasmus-plus/projects/eplus-project-details/#project/2020-1-NL01-KA203-064717\"><code class=\"language-plaintext highlighter-rouge\">2020-1-NL01-KA203-064717</code></a>) is funded with the support of the Erasmus+ programme of the European Union. Their funding has supported a large number of tutorials within the GTN across a wide array of topics.\n<img src=\"https://gallantries.github.io/assets/images/logosbeneficaireserasmusright_en.jpg\" alt=\"eu flag with the text: with the support of the erasmus programme of the european union\" />",
     "id": "erasmusplus",
-    "url": "https://training.galaxyproject.org/training-material/api/contributors/erasmusplus.json",
     "page": "https://training.galaxyproject.org/training-material/hall-of-fame/erasmusplus/"
   },
   {
@@ -2397,17 +2526,27 @@
     "joined": "2020-11",
     "funder": true,
     "funding_statement": "A number of our employees contribute directly to the Galaxy Training Network and seek to make our higher education learning materials more accessible to a wider audience through the GTN platform. <a href=\"https://avans.nl/\">avans.nl</a>",
-    "id": "avans-atgm",
     "url": "https://training.galaxyproject.org/training-material/api/contributors/avans-atgm.json",
+    "id": "avans-atgm",
     "page": "https://training.galaxyproject.org/training-material/hall-of-fame/avans-atgm/"
   },
   {
     "name": "ELIXIR Europe",
     "joined": "2017-09",
     "funder": true,
-    "id": "elixir-europe",
     "url": "https://training.galaxyproject.org/training-material/api/contributors/elixir-europe.json",
+    "id": "elixir-europe",
     "page": "https://training.galaxyproject.org/training-material/hall-of-fame/elixir-europe/"
+  },
+  {
+    "name": "Common Infrastructure for National Cohorts in Europe, Canada, and Africa",
+    "joined": "2023-03",
+    "funder": true,
+    "funding_id": "825775",
+    "funding_system": "cordis",
+    "url": "https://training.galaxyproject.org/training-material/api/contributors/CINECA-Project.json",
+    "id": "CINECA-Project",
+    "page": "https://training.galaxyproject.org/training-material/hall-of-fame/CINECA-Project/"
   },
   {
     "name": "EPSRC Training Grant DTP 2020-2021 Open University",
@@ -2430,9 +2569,22 @@
     "joined": "2023-04",
     "avatar": "https://www.eosc-life.eu/wp-content/themes/eosc-life-v2/assets/images/eosclogo.png",
     "funder": true,
+    "funding_id": "824087",
+    "funding_system": "cordis",
     "funding_statement": "EOSC-Life has received funding from the European Union’s Horizon 2020 programme under grant agreement number 824087",
-    "id": "eosc-life",
     "url": "https://training.galaxyproject.org/training-material/api/contributors/eosc-life.json",
+    "id": "eosc-life",
     "page": "https://training.galaxyproject.org/training-material/hall-of-fame/eosc-life/"
+  },
+  {
+    "name": "BeYond-COVID",
+    "joined": "2023-04",
+    "funder": true,
+    "funding_id": "101046203",
+    "funding_system": "cordis",
+    "funding_statement": "BY-COVID is an <a href=\"https://cordis.europa.eu/project/id/101046203\">EC funded project</a> that tackles the data challenges that can hinder effective pandemic response.\n\nThis project has received funding from the European Union’s Horizon Europe research and innovation programme under grant agreement No. 101046203 (BY-COVID)",
+    "url": "https://training.galaxyproject.org/training-material/api/contributors/by-covid.json",
+    "id": "by-covid",
+    "page": "https://training.galaxyproject.org/training-material/hall-of-fame/by-covid/"
   }
 ]

@@ -17,13 +17,13 @@
         <link rel="shortcut icon" href="/training-material/favicon.ico" type="image/x-icon">
         <link rel="alternate" type="application/atom+xml" href="/training-material/feed.xml">
         <link rel="canonical" href="https://training.galaxyproject.org/training-material/topics/epigenetics/tutorials/introduction-chip-seq/slides-plain.html">
-        <link rel="license" href="https://creativecommons.org/licenses/by/4.0/">
+	<link rel="license" href="https://spdx.org/licenses/CC-BY-4.0">
 
         <meta name="DC.identifier" content="https://github.com/galaxyproject/training-material">
 <meta name="DC.type" content="text">
 <meta name="DC.title" content="Introduction to ChIP-Seq data analysis">
 <meta name="DC.publisher" content="Galaxy Training Network">
-<meta name="DC.date" content="2023-05-12 01:15:19 +0000">
+<meta name="DC.date" content="2023-05-13 01:13:23 +0000">
 <meta name="DC.creator" content="Bérénice Batut">
 
         
@@ -65,38 +65,10 @@
                         
                     </li>
 
-                    <li class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false" title="Languages">
-                            <i class="fas fa-language" aria-hidden="true"></i><span class="visually-hidden">language</span> Languages
+                    <li class="nav-item">
+                        <a class="nav-link" href="/training-material/learning-pathways" title="Learning Pathways">
+                           <i class="fas fa-graduation-cap" aria-hidden="true"></i><span class="visually-hidden">curriculum</span> Learning Pathways
                         </a>
-                        <div class="dropdown-menu dropdown-menu-right">
-                            
-                              <strong class="dropdown-header">Automatic Translations</strong>
-            
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=fr&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/epigenetics/tutorials/introduction-chip-seq/slides-plain.html&edit-text=&act=url">
-                            Français
-                            </a>
-                            
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ja&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/epigenetics/tutorials/introduction-chip-seq/slides-plain.html&edit-text=&act=url">
-                            日本語
-                            </a>
-                            
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=es&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/epigenetics/tutorials/introduction-chip-seq/slides-plain.html&edit-text=&act=url">
-                            Español
-                            </a>
-                            
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=pt&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/epigenetics/tutorials/introduction-chip-seq/slides-plain.html&edit-text=&act=url">
-                            Português
-                            </a>
-                            
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ar&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/epigenetics/tutorials/introduction-chip-seq/slides-plain.html&edit-text=&act=url">
-                            العربية
-                            </a>
-                            
-                            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/epigenetics/tutorials/introduction-chip-seq/slides-plain.html&edit-text=&act=url" title="">
-                            And more!
-                            </a>
-                        </div>
                     </li>
 
                     <li class="nav-item dropdown">
@@ -229,7 +201,7 @@
 
 		
 
-		<div><strong> <i class="far fa-calendar" aria-hidden="true"></i><span class="visually-hidden">last_modification</span> Last modification:</strong> May 12, 2023 </div>
+		<div><strong> <i class="far fa-calendar" aria-hidden="true"></i><span class="visually-hidden">last_modification</span> Last modification:</strong> May 13, 2023 </div>
 
 	<hr />
 
@@ -240,7 +212,7 @@
 
 <h3 id="where-my-data-comes-from">Where my data comes from?</h3>
 
-<p><img src="../../images/ecker_2012.jpg" alt="Cartoon showing the histones forming part of the chromosome. Various insets zoom in from the DNase I hypersensitive sites to DNA with transcription factors and binding sites, which zooms into a block diagram of a gene." loading="lazy" />
+<p><img src="../../images/ecker_2012.jpg" alt="Cartoon showing the histones forming part of the chromosome. Various insets zoom in from the DNase I hypersensitive sites to DNA with transcription factors and binding sites, which zooms into a block diagram of a gene." />
 <small>
 <a href="https://www.ncbi.nlm.nih.gov/pubmed/22955614"><em>Ecker et al, Nature, 2012</em></a>
 </small></p>
@@ -249,7 +221,7 @@
 
 <h3 id="chromatin-immuno-precipitation">Chromatin immuno-precipitation</h3>
 
-<p><img src="../../images/szalkowski_schmid_2011.jpg" alt="Cartoon of Chromatin immuno-precipitation. DNA interacts with proteins, this is cross-linked and sheared into DNA-protein complexes, immunoprecipitated, purified, and the bound DNA is sequenced. This is then mapped to a reference genome and the tag distribution is plotted along a chromosome." loading="lazy" /></p>
+<p><img src="../../images/szalkowski_schmid_2011.jpg" alt="Cartoon of Chromatin immuno-precipitation. DNA interacts with proteins, this is cross-linked and sheared into DNA-protein complexes, immunoprecipitated, purified, and the bound DNA is sequenced. This is then mapped to a reference genome and the tag distribution is plotted along a chromosome." /></p>
 
 <p><a href="https://bib.oxfordjournals.org/content/12/6/626.long"><em>Szalkowski &amp; Schmid, Brief Bioinform, 2011</em></a></p>
 
@@ -261,7 +233,7 @@
 
 <h3 id="common-procedures-for-chip-seq-data-analysis">Common procedures for ChIP-seq data analysis</h3>
 
-<p><img src="../../images/kidder_2011.jpg" alt="Complex graphic with the first step being Sequence alignment. Then Inpsect data quality with several substeps and graphics shown genome browser, motifs, and a chart of tag density vs tss. Lastly is peak calling, for broad peaks CCAT and SICER, for Sharp peaks MACS, and for both ZINBA." loading="lazy" /></p>
+<p><img src="../../images/kidder_2011.jpg" alt="Complex graphic with the first step being Sequence alignment. Then Inpsect data quality with several substeps and graphics shown genome browser, motifs, and a chart of tag density vs tss. Lastly is peak calling, for broad peaks CCAT and SICER, for Sharp peaks MACS, and for both ZINBA." /></p>
 
 <p><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3541830/"><em>Kidder et al, Nature Immunology, 2011</em></a></p>
 
@@ -303,7 +275,7 @@ This material is licensed under the <a rel="license" href="https://creativecommo
         The content of the tutorials is licensed under the <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>. The website and infrastructure is licensed under <a rel="license" href="https://github.com/galaxyproject/training-material/blob/main/LICENSE.md">MIT</a>.
         </p>
 
-        <p>This is revision <a href="https://github.com/galaxyproject/training-material/commit/49b4b57e9c996cf4e6793996bd5e0fa33c70c6b0">49b4b57e9c996cf4e6793996bd5e0fa33c70c6b0</a></p>
+        <p>This is revision <a href="https://github.com/galaxyproject/training-material/commit/7f03fc0dbf5b68581c6fd66c2ad9e702cfed448e">7f03fc0dbf5b68581c6fd66c2ad9e702cfed448e</a>. </p>
     </div>
 </footer>
 

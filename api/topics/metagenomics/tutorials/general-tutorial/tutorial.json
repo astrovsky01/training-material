@@ -57,7 +57,7 @@
         "lat": 45.77,
         "lon": 3.08
       },
-      "fediverse": "bebatut@piaille.fr",
+      "fediverse": "https://piaille.fr/@bebatut",
       "id": "bebatut",
       "url": "https://training.galaxyproject.org/training-material/api/contributors/bebatut.json",
       "page": "https://training.galaxyproject.org/training-material/hall-of-fame/bebatut/"
@@ -79,19 +79,6 @@
   "slides": false,
   "workflows": [
     {
-      "workflow": "wgs-worklow.ga",
-      "tests": false,
-      "url": "https://training.galaxyproject.org/training-material/topics/metagenomics/tutorials/general-tutorial/workflows/wgs-worklow.ga",
-      "path": "topics/metagenomics/tutorials/general-tutorial/workflows/wgs-worklow.ga",
-      "wfid": "metagenomics-general-tutorial",
-      "wfname": "wgs-worklow",
-      "trs_endpoint": "https://training.galaxyproject.org/training-material/api/ga4gh/trs/v2/tools/metagenomics-general-tutorial/versions/wgs-worklow",
-      "license": null,
-      "creators": [
-
-      ]
-    },
-    {
       "workflow": "amplicon.ga",
       "tests": true,
       "url": "https://training.galaxyproject.org/training-material/topics/metagenomics/tutorials/general-tutorial/workflows/amplicon.ga",
@@ -99,6 +86,19 @@
       "wfid": "metagenomics-general-tutorial",
       "wfname": "amplicon",
       "trs_endpoint": "https://training.galaxyproject.org/training-material/api/ga4gh/trs/v2/tools/metagenomics-general-tutorial/versions/amplicon",
+      "license": null,
+      "creators": [
+
+      ]
+    },
+    {
+      "workflow": "wgs-worklow.ga",
+      "tests": false,
+      "url": "https://training.galaxyproject.org/training-material/topics/metagenomics/tutorials/general-tutorial/workflows/wgs-worklow.ga",
+      "path": "topics/metagenomics/tutorials/general-tutorial/workflows/wgs-worklow.ga",
+      "wfid": "metagenomics-general-tutorial",
+      "wfname": "wgs-worklow",
+      "trs_endpoint": "https://training.galaxyproject.org/training-material/api/ga4gh/trs/v2/tools/metagenomics-general-tutorial/versions/wgs-worklow",
       "license": null,
       "creators": [
 
@@ -139,9 +139,5 @@
     ],
     "video": false
   },
-  "type": "tutorial",
-  "urls": {
-    "hands_on": "https://training.galaxyproject.org/training-material/api/topics//metagenomics/tutorials/general-tutorial/tutorial.json",
-    "slides": "https://training.galaxyproject.org/training-material/api/topics//metagenomics/tutorials/general-tutorial/tutorial.json"
-  }
+  "type": "tutorial"
 }
